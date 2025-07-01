@@ -27,54 +27,7 @@ h1 {
   cursor: pointer;
 }
 
-.aboutMeTextWrapper {
-  flex-grow: 1;
-  min-width: 300px;
-  height: 60vh;
-  
-  background-color: rgba(211, 211, 211, 0.5);
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.aboutMeText {
-  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
-  color: white;
-  padding: 0px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-}
-
-.aboutMeText p {
-  margin: 0.5rem 0;
-}
-.contactText {
-  font-size: clamp(1.0rem, 1.5vw, 1.5rem);
-}
-
-.contact {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  flex-shrink: 0;
-  min-width: 250px;
-  text-align: left;
-  flex-basis: 40%;
-  margin-right: auto;
-}
-
-.gamjaText {
-  font-size: clamp(0.7rem, 1.0vw, 1.0rem);
-  text-align: center;
-  margin-top: -4vh;
-  margin-left: 0;
-}
-
-#A, #B ,#C ,#D {
+#B, #C, #D {
   width: 100vw;
   min-height: 100vh;
   border: 1px solid white;
@@ -138,55 +91,6 @@ header.hidden .navBar {
   margin-right: 1vw;
 }
 
-.aboutMe {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 90vw;
-  margin-left: 5vw;
-  align-self: flex-start;
-  justify-content: flex-start;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.face {
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 250px;
-  height: 300px;
-  aspect-ratio: auto;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-.contactAndGamja {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 90vw;
-  margin: 0 auto; 
-  margin-top: -10vh;
-  gap: 5vw;
-}
-
-.gamjaWrapper {
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 180px;
-  height: 180px;
-  aspect-ratio: 1 / 1;
-  text-align: center;
-  flex-basis: auto;
-}
-.gamja {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 /* === 통합된 미디어 쿼리 (1023px 이하) === */
 @media screen and (max-width: 1023px) {
   h1 {
@@ -197,56 +101,5 @@ header.hidden .navBar {
   .navBar a {
     font-size: clamp(0.9rem, 1.2vw, 1.2rem);
     padding: 0 5px;
-  }
-
-  .aboutMe, .contactAndGamja {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .contactAndGamja {
-    margin-top: 30px;
-    justify-content: center;
-  }
-  .contact {
-    margin-right: 0;
-  }
-
-  .aboutMeTextWrapper {
-    width: 90%;
-    height: auto;
-    min-height: 200px;
-    max-width: 100%;
-  }
-
-  .aboutMeText, .contact {
-    width: 90%;
-    max-width: none;
-    text-align: center;
-  }
-
-  .aboutMeText {
-      height: auto;
-      min-height: 200px;
-      font-size: clamp(1rem, 1.5vw, 1.5rem);
-  }
-
-  .face {
-    margin-left: 0;
-    align-self: center;
-  }
-
-  .face, .gamjaWrapper {
-    width: 250px;
-    height: 250px;
-    max-width: none;
-    margin-top: 20px;
-  }
-
-  .gamjaText {
-    text-align: center;
   }
 }

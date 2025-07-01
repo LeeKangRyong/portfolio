@@ -1,3 +1,4 @@
+import './AboutMe.css';
 import face from '../assets/face.jpg';
 import gamja from '../assets/gamza_gif.gif';
 
