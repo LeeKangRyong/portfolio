@@ -1,10 +1,11 @@
 import './skills.css';
 
 function Skills({ title }) {
-    return(
+    return (
         <div>
             <p>{title}</p>
         </div>
     )
 }
+
 export default Skills;

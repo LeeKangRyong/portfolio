@@ -1,20 +1,58 @@
+.historyContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .historyTitle {
-    margin-top: 0 auto;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-align: center;
+    margin-left: 3vw;
+    color: white;
+    margin-top: 0;
 }
 
 .historyWrapper {
-    margin-top: 0; 
-    width: 100%; 
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    gap: 0;
+    padding: 0 2rem;
 }
 
-@media (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .historyTitle {
+    text-align: center;
+    margin-left: 0;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    }
+
     .historyWrapper {
-        align-items: center;
-        margin: 0 auto; 
-        padding: 0 10px; 
-        max-width: 100%; 
+    padding: 0 1.5rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .historyTitle {
+    text-align: center;
+    margin-left: 0;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+    }
+
+    .historyWrapper {
+    padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .historyTitle {
+    font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+    }
+
+    .historyWrapper {
+    padding: 0 0.5rem;
     }
 }

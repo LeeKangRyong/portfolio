@@ -1,177 +1,266 @@
+.aboutMeContainer {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .aboutTitle {
-    text-align: left;
-    margin-left: 5vw;
-    margin-bottom: 20px;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-align: center;
+    margin-left: 3vw;
     color: white;
 }
 
 .aboutMe {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 30px;
-    width: 90vw; 
-    max-width: 1200px;
-    margin: 0 auto; 
-    margin-bottom: 50px;
+    gap: 3rem;
+    width: 100%;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
 }
 
 .aboutMeTextWrapper {
     flex: 1;
-    min-width: 400px;
+    min-width: 0;
     background-color: rgba(211, 211, 211, 0.5);
-    border-radius: 20px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 3rem;
+    border: 1px solid rgba(107, 114, 128, 0.5);
 }
 
 .aboutMeText {
-    font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
     color: white;
     text-align: left;
-    width: 100%;
+    line-height: 1.6;
 }
 
 .aboutMeText p {
-    margin: 0.8rem 0;
-    line-height: 1.5;
+    margin: 1.2rem 0;
+}
+
+.profileImageContainer {
+    flex-shrink: 0;
 }
 
 .face {
-    max-width: 250px; 
-    max-height: 280px;
+    width: 280px;
+    height: 360px;
     object-fit: cover;
-    border-radius: 20px;
-    flex-shrink: 0;
-    align-self: flex-start;
+    border-radius: 24px;
+    background-color: white;
+    padding: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    margin-right: 3rem;
 }
 
 .contactAndGamja {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
-    width: 90vw; 
-    margin: 0 auto; 
-    margin-top: -100px;
-    padding: 0 0;
-    box-sizing: border-box;
+    align-items: start;
+    width: 100%;
+    gap: 3rem;
+    padding: 0 2rem;
 }
 
 .contact {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    gap: 1rem;
     flex-shrink: 0;
-    margin-right: auto;
-    color: white;
-    margin-left: 0; 
 }
 
 .contactText {
-    font-size: clamp(1rem, 1.4vw, 1.4rem);
-    margin-bottom: 5px;
+    font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+    font-weight: 500;
+    color: white;
+}
+
+.contactLabel {
+    color: #d1d5db;
 }
 
 .gamjaWrapper {
-    flex-grow: 0;
-    flex-shrink: 0;
-    width: 180px;
-    height: 180px;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
-    margin-top: 40px;
+    flex-shrink: 0;
+    margin-right: 3rem;
+}
+
+.gamjaContainer {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gamja {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    border-radius: 16px;
 }
 
 .gamjaText {
-    font-size: clamp(0.5rem, 0.8vw, 0.8rem);
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
     color: white;
     text-align: center;
-    margin-top: -20px;
-    margin-bottom: 0;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
 }
 
-@media screen and (max-width: 1023px) {
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .aboutTitle {
-        text-align: center; /* 모바일에서는 제목 중앙 정렬 */
-        margin-left: 0;
-        margin-right: 0;
+    text-align: center;
+    margin-left: 0;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
     }
 
     .aboutMe {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        margin-bottom: 30px;
-        width: 100%; /* 모바일에서 가로 꽉 채우기 */
-        padding: 0 20px; /* 좌우 여백 추가 */
-        box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
     }
 
     .aboutMeTextWrapper {
-        width: 90%;
-        min-width: unset;
-        padding: 20px;
-        flex: unset;
-        max-width: 500px;
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
     }
 
     .aboutMeText {
-        font-size: clamp(1rem, 4vw, 1.2rem);
-        text-align: center;
-    }
-
-    .aboutMeText p {
-        margin: 0.8rem 0;
+    text-align: center;
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
     }
 
     .face {
-        width: 200px;
-        height: 240px;
-        align-self: center;
-        max-width: 200px; /* 모바일에서도 max-width 유지 */
+    width: 250px;
+    height: 300px;
     }
 
     .contactAndGamja {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        margin-top: 30px;
-        width: 100%; /* 모바일에서 가로 꽉 채우기 */
-        padding: 0 20px; /* 좌우 여백 추가 */
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     }
 
     .contact {
-        text-align: center;
-        margin-right: 0;
-        margin-left: 0;
+    text-align: center;
+    align-items: center;
+    }
+
+    .gamjaContainer {
+    width: 180px;
+    height: 180px;
+    }
+    }
+
+    @media screen and (max-width: 767px) {
+    .aboutTitle {
+    text-align: center;
+    margin-left: 0;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+    }
+
+    .aboutMe {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    }
+
+    .aboutMeTextWrapper {
+    width: 100%;
+    padding: 1.5rem;
+    }
+
+    .aboutMeText {
+    text-align: center;
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    }
+
+    .aboutMeText p {
+    margin: 1rem 0;
+    }
+
+    .face {
+    width: 200px;
+    height: 240px;
+    padding: 12px;
+    }
+
+    .contactAndGamja {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    }
+
+    .contact {
+    text-align: center;
+    align-items: center;
+    width: 100%;
     }
 
     .contactText {
-        font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
     }
 
-    .gamjaWrapper {
-        width: 150px;
-        height: 150px;
+    .gamjaContainer {
+    width: 150px;
+    height: 150px;
     }
 
     .gamjaText {
-        font-size: clamp(0.6rem, 2.5vw, 0.8rem);
-        margin-top: 5px;
+    font-size: clamp(0.8rem, 1vw, 0.9rem);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .aboutMeTextWrapper {
+    padding: 1rem;
+    }
+
+    .aboutMeText {
+    font-size: clamp(0.85rem, 1.1vw, 1rem);
+    }
+
+    .face {
+    width: 180px;
+    height: 220px;
+    padding: 10px;
+    }
+
+    .contactText {
+    font-size: clamp(0.8rem, 1vw, 0.9rem);
+    }
+
+    .gamjaContainer {
+    width: 130px;
+    height: 130px;
+    }
+
+    .gamjaText {
+    font-size: clamp(0.7rem, 0.9vw, 0.8rem);
     }
 }

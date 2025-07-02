@@ -1,101 +1,158 @@
 .history {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    border-bottom: 1px white solid;
-    min-height: 20vh; /* 모든 history 항목 동일한 최소 높이 */
+    border-bottom: 1px solid white;
+    padding: 2rem 0;
+    gap: 3rem;
+    width: 100%;
+}
+
+.history:last-child {
+    border-bottom: none;
 }
 
 .titleWrapper {
-    width: 20vw;
+    width: 320px;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.descWrapper {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-}
-
-.title, .description {
-    white-space: pre-line;
-}
-
-.title, .duration {
     text-align: center;
 }
 
+.descWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
 .title {
-    font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: white;
+    white-space: pre-line;
+    line-height: 1.2;
 }
 
 .duration {
-    margin-top: -3vh;
-    font-size: clamp(0.7rem, 1.0vw, 1.0rem);
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-weight: 500;
+}
+
+.description {
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+    white-space: pre-line;
+    text-align: left;
 }
 
 .verticalLine {
-    width: 1px; 
-    height: 15vh;
-    background-color: white;
-    flex-shrink: 0; 
-    align-self: center;
-    opacity: 0.5;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 100px;
 }
 
-@media (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .history {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin: 0 auto;
-        padding: 0 20px;
-        box-sizing: border-box;
-        border-bottom: none; 
-        position: relative;
-    }
-    
-    .history::after {
-        content: '';
-        position: absolute;
-        bottom: -1px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60%;
-        height: 1px;
-        background-color: white;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    text-align: center;
     }
 
-    .titleWrapper,
-    .descWrapper {
-        width: 90%;
-        max-width: 500px;
-        align-items: center;
-        text-align: center;
-        margin: 0;
-        padding: 5px 0;
-        flex: unset;
+    .titleWrapper {
+    width: 100%;
     }
 
     .descWrapper {
-        margin-top: -100px;
+    width: 100%;
+    align-items: center;
     }
 
-    h1,
-    .title,
-    .duration,
     .description {
-        text-align: center;
+    text-align: center;
+    font-size: clamp(1.1rem, 1.3vw, 1.3rem);
     }
 
     .verticalLine {
-        visibility: hidden;
+    display: none;
+    }
+
+    .title {
+    font-size: clamp(1.3rem, 1.8vw, 1.8rem);
+    }
+
+    .duration {
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .history {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    text-align: center;
+    }
+
+    .titleWrapper {
+    width: 100%;
+    }
+
+    .descWrapper {
+    width: 100%;
+    align-items: center;
+    }
+
+    .title {
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+    margin-bottom: 0.3rem;
+    }
+
+    .duration {
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    margin-bottom: 0.5rem;
+    }
+
+    .description {
+    text-align: center;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    line-height: 1.4;
+    }
+
+    .verticalLine {
+    display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .history {
+    padding: 1rem 0;
+    gap: 0.8rem;
+    }
+
+    .title {
+    font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+    }
+
+    .duration {
+    font-size: clamp(0.8rem, 1vw, 0.95rem);
+    }
+
+    .description {
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
     }
 }

@@ -1,17 +1,19 @@
 import './historyDetail.css';
 
 function HistoryDetail({ title, duration, description }) {
-    return(
-        <article className="history">
+    return (
+        <div className="history">
             <div className="titleWrapper">
-                <p className="title">{title}</p>
+                <h3 className="title">{title}</h3>
                 <p className="duration">{duration}</p>
             </div>
-            <div className="verticalLine" />
-            <div className='descWrapper'>
+            
+            <div className="verticalLine"></div>
+            
+            <div className="descWrapper">
                 <p className="description">{description}</p>
             </div>
-        </article>
+        </div>
     );
 }
 
