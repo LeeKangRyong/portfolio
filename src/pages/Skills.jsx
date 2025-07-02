@@ -1,4 +1,4 @@
-import './skills.css';
+import './Skills.css';
 import { useState, useEffect } from 'react';
 import SkillDetail from '../components/SkillDetail';
 import larrow from '../assets/skills/larrow.png';

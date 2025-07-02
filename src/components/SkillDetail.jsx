@@ -1,4 +1,4 @@
-import './skillDetail.css';
+import './SkillDetail.css';
 
 function SkillDetail({ icon, name, description }) {
     return (
