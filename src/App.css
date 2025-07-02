@@ -4,17 +4,17 @@ html, body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: clamp(12px, 1.8vw, 16px);
 }
 
 h2, h3, p {
-  margin: 1rem;
+  margin: clamp(0.6rem, 1.8vw, 1rem);
 }
 
 h1 {
-  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-size: clamp(1.8rem, 5vw, 4.5rem);
   line-height: 1.1;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.2rem, 3vw, 2rem);
   margin-left: 0;
   margin-top: 0;
   font-weight: bold;
@@ -29,48 +29,107 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 20px 40px;
+  padding: clamp(70px, 10vw, 80px) clamp(10px, 3vw, 20px) clamp(25px, 4vw, 40px);
 }
 
+/* 태블릿 모드 (768px ~ 1023px) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  html, body {
+    font-size: clamp(11px, 1.6vw, 15px);
+  }
+
   section {
-    padding: 80px 15px 40px;
+    padding: clamp(65px, 8vw, 80px) clamp(8px, 2.5vw, 15px) clamp(25px, 3.5vw, 40px);
+    min-height: 100vh;
   }
 
   h1 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-size: clamp(1.6rem, 4.5vw, 3.5rem);
+    margin-bottom: clamp(1rem, 2.5vw, 1.8rem);
   }
 
   .skillWrapper {
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: clamp(1rem, 2.5vw, 1.5rem);
   }
 }
 
+/* 모바일 모드 (767px 이하) */
 @media screen and (max-width: 767px) {
+  html, body {
+    font-size: clamp(10px, 1.5vw, 14px);
+  }
+
   section {
-    padding: 90px 10px 40px;
+    padding: clamp(55px, 7vw, 90px) clamp(5px, 2vw, 10px) clamp(20px, 3vw, 40px);
+    min-height: 100vh;
   }
 
   h1 {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.4rem, 4vw, 2.5rem);
+    margin-bottom: clamp(0.8rem, 2vw, 1.5rem);
+    line-height: 1.2;
   }
 
   .skillWrapper {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: clamp(0.6rem, 1.8vw, 1rem);
   }
 }
 
+/* 초소형 모바일 (480px 이하) */
 @media screen and (max-width: 480px) {
+  html, body {
+    font-size: clamp(9px, 1.3vw, 13px);
+  }
+
   section {
-    padding: 80px 5px 30px;
+    padding: clamp(50px, 6vw, 80px) clamp(3px, 1.5vw, 8px) clamp(15px, 2.5vw, 30px);
   }
 
   h1 {
-    font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+    font-size: clamp(1.2rem, 3.5vw, 2.2rem);
+    margin-bottom: clamp(0.6rem, 1.8vw, 1.2rem);
   }
+
+  .skillWrapper {
+    gap: clamp(0.4rem, 1.5vw, 0.8rem);
+  }
+}
+
+/* 추가적인 반응형 유틸리티 클래스 */
+.container-responsive {
+  width: 100%;
+  max-width: clamp(280px, 85vw, 1200px);
+  margin: 0 auto;
+  padding: 0 clamp(0.3rem, 1.5vw, 1rem);
+  box-sizing: border-box;
+}
+
+.text-responsive {
+  font-size: clamp(0.6rem, 1.8vw, 1.2rem);
+  line-height: 1.5;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.image-responsive {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.gap-responsive {
+  gap: clamp(0.3rem, 1.8vw, 1.5rem);
+}
+
+.padding-responsive {
+  padding: clamp(0.3rem, 1.8vw, 1.5rem);
+}
+
+.margin-responsive {
+  margin: clamp(0.3rem, 1.8vw, 1.5rem);
 }
