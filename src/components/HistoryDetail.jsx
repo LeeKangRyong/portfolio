@@ -1,4 +1,4 @@
-import './historyDetail.css';
+import './HistoryDetail.css';
 
 function HistoryDetail({ title, duration, description }) {
     return (

@@ -2,6 +2,8 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
 }
 
 .aboutTitle {
@@ -9,8 +11,8 @@
     font-weight: bold;
     margin-bottom: 3rem;
     text-align: center;
-    margin-left: 3vw;
     color: white;
+    margin-left: 0;
 }
 
 .aboutMe {
@@ -21,7 +23,6 @@
     gap: 3rem;
     width: 100%;
     margin-bottom: 4rem;
-    padding: 0 2rem;
 }
 
 .aboutMeTextWrapper {
@@ -30,14 +31,14 @@
     background-color: rgba(211, 211, 211, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 24px;
-    padding: 3rem;
+    padding: 1.5rem 2rem;
     border: 1px solid rgba(107, 114, 128, 0.5);
 }
 
 .aboutMeText {
-    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    font-size: clamp(1.2rem, 1.3vw, 1.3rem);
     color: white;
-    text-align: left;
+    text-align: center;
     line-height: 1.6;
 }
 
@@ -50,15 +51,14 @@
 }
 
 .face {
-    width: 280px;
-    height: 360px;
+    width: 250px;
+    height: 300px;
     object-fit: cover;
     border-radius: 24px;
     background-color: white;
     padding: 16px;
     box-sizing: border-box;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    margin-right: 3rem;
 }
 
 .contactAndGamja {
@@ -68,7 +68,6 @@
     align-items: start;
     width: 100%;
     gap: 3rem;
-    padding: 0 2rem;
 }
 
 .contact {
@@ -93,7 +92,6 @@
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
-    margin-right: 3rem;
 }
 
 .gamjaContainer {
@@ -125,142 +123,149 @@
     border-radius: 20px;
 }
 
-/* Tablet styles */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .aboutMeContainer {
+        padding: 0 1.5rem;
+    }
+
     .aboutTitle {
-    text-align: center;
-    margin-left: 0;
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
     }
 
     .aboutMe {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
     }
 
     .aboutMeTextWrapper {
-    width: 100%;
-    max-width: 600px;
-    padding: 2rem;
+        width: 100%;
+        max-width: 600px;
+        padding: 2rem;
     }
 
     .aboutMeText {
-    text-align: center;
-    font-size: clamp(1rem, 1.3vw, 1.2rem);
+        text-align: center;
+        font-size: clamp(1rem, 1.3vw, 1.2rem);
     }
 
     .face {
-    width: 250px;
-    height: 300px;
+        width: 220px;
+        height: 250px;
     }
 
     .contactAndGamja {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
     }
 
     .contact {
-    text-align: center;
-    align-items: center;
+        text-align: center;
+        align-items: center;
     }
 
     .gamjaContainer {
-    width: 180px;
-    height: 180px;
+        width: 180px;
+        height: 180px;
     }
+}
+
+@media screen and (max-width: 767px) {
+    .aboutMeContainer {
+        padding: 0 1rem;
     }
 
-    @media screen and (max-width: 767px) {
     .aboutTitle {
-    text-align: center;
-    margin-left: 0;
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    margin-bottom: 2rem;
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        margin-bottom: 2rem;
     }
 
     .aboutMe {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    padding: 0 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
     }
 
     .aboutMeTextWrapper {
-    width: 100%;
-    padding: 1.5rem;
+        width: 80%;
+        padding: 1.5rem;
+        align-items: center;
     }
 
+
     .aboutMeText {
-    text-align: center;
-    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+        text-align: center;
+        font-size: clamp(0.95rem, 1.2vw, 1.1rem);
     }
 
     .aboutMeText p {
-    margin: 1rem 0;
+        margin: 1rem 0;
     }
 
     .face {
-    width: 200px;
-    height: 240px;
-    padding: 12px;
+        width: 200px;
+        height: 240px;
+        padding: 12px;
     }
 
     .contactAndGamja {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 0 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
     }
 
     .contact {
-    text-align: center;
-    align-items: center;
-    width: 100%;
+        text-align: center;
+        align-items: center;
+        width: 100%;
     }
 
     .contactText {
-    font-size: clamp(0.9rem, 1.1vw, 1rem);
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
     }
 
     .gamjaContainer {
-    width: 150px;
-    height: 150px;
+        width: 150px;
+        height: 150px;
     }
 
     .gamjaText {
-    font-size: clamp(0.8rem, 1vw, 0.9rem);
+        font-size: clamp(0.8rem, 1vw, 0.9rem);
     }
 }
 
 @media screen and (max-width: 480px) {
+    .aboutMeContainer {
+        padding: 0 0.5rem;
+    }
+
     .aboutMeTextWrapper {
-    padding: 1rem;
+        padding: 1rem;
     }
 
     .aboutMeText {
-    font-size: clamp(0.85rem, 1.1vw, 1rem);
+        font-size: clamp(0.85rem, 1.1vw, 1rem);
     }
 
     .face {
-    width: 180px;
-    height: 220px;
-    padding: 10px;
+        width: 180px;
+        height: 210px;
+        padding: 10px;
     }
 
     .contactText {
-    font-size: clamp(0.8rem, 1vw, 0.9rem);
+        font-size: clamp(0.8rem, 1vw, 0.9rem);
     }
 
     .gamjaContainer {
-    width: 130px;
-    height: 130px;
+        width: 130px;
+        height: 130px;
     }
 
     .gamjaText {
-    font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+        font-size: clamp(0.7rem, 0.9vw, 0.8rem);
     }
 }

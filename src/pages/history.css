@@ -2,6 +2,8 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
 }
 
 .historyTitle {
@@ -9,9 +11,9 @@
     font-weight: bold;
     margin-bottom: 3rem;
     text-align: center;
-    margin-left: 3vw;
     color: white;
     margin-top: 0;
+    margin-left: 0;
 }
 
 .historyWrapper {
@@ -19,40 +21,35 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 0 2rem;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .historyTitle {
-    text-align: center;
-    margin-left: 0;
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    .historyContainer {
+        padding: 0 1.5rem;
     }
 
-    .historyWrapper {
-    padding: 0 1.5rem;
+    .historyTitle {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
     }
 }
 
 @media screen and (max-width: 767px) {
-    .historyTitle {
-    text-align: center;
-    margin-left: 0;
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    margin-bottom: 2rem;
+    .historyContainer {
+        padding: 0 1rem;
     }
 
-    .historyWrapper {
-    padding: 0 1rem;
+    .historyTitle {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        margin-bottom: 2rem;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .historyTitle {
-    font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+    .historyContainer {
+        padding: 0 0.5rem;
     }
 
-    .historyWrapper {
-    padding: 0 0.5rem;
+    .historyTitle {
+        font-size: clamp(1.8rem, 3.5vw, 2.2rem);
     }
 }

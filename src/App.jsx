@@ -18,12 +18,7 @@ function App() {
         </section>
 
         <section id='C'>
-          <h1>Skills & Tools</h1>
-          <div className="skillWrapper">
-            <Skills title="FE" />
-            <Skills title="BE" />
-            <Skills title="ETC" />
-          </div>
+            <Skills />
         </section>
 
         <section id='D'>

@@ -124,6 +124,7 @@ header::before {
 @media screen and (max-width: 480px) {
     .navBar {
         height: 60px;
+        padding: 0 0.5rem;
     }
 
     .navBar a {

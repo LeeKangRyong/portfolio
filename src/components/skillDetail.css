@@ -1,0 +1,49 @@
+.skillDetailContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem; /* 0.8rem에서 1rem으로 증가 */
+    width: 100%;
+    max-width: 350px; /* 280px에서 350px로 증가 */
+}
+
+.skillWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 70px; /* 60px에서 70px로 증가 */
+}
+
+.skillIcon {
+    width: 45px; /* 40px에서 45px로 증가 */
+    height: 45px;
+    object-fit: cover;
+    margin-bottom: 0.4rem; /* 0.3rem에서 0.4rem으로 증가 */
+}
+
+.skillName {
+    white-space: pre-line;
+    text-align: center;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.skillDescWrapper {
+    background-color: white;
+    border-radius: 18px;
+    padding: 0.9rem;
+    flex: 1;
+    min-width: 180px;
+}
+
+.skillDescription {
+    color: black;
+    margin: 0;
+    font-size: 0.8rem; 
+    line-height: 1.4;
+}

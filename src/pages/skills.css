@@ -1,0 +1,262 @@
+.skillsContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.skillsTitle {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: white;
+    margin-top: 0;
+}
+
+.skillsWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.skillsContent {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    background: rgba(211, 211, 211, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 450px;
+    width: 70%;
+    height: 40vh;
+}
+
+.leftArrow,
+.rightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.leftArrow {
+    left: 20px;
+}
+
+.rightArrow {
+    right: 20px;
+}
+
+.skillsContent:hover .leftArrow,
+.skillsContent:hover .rightArrow {
+    opacity: 1;
+    visibility: visible;
+}
+
+.skillsContent:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.leftArrow:hover,
+.rightArrow:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.skillsSlider {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    width: 100%;
+}
+
+.skillCategory {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.categoryTitle {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
+    gap: 1rem 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+}
+
+
+/* BE */
+.skillCategory:nth-child(2) .skillsGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: row;
+    max-width: 400px;
+    gap: 1.5rem;
+    justify-items: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .skillsContainer {
+        padding: 0 1.5rem;
+    }
+
+    .skillsTitle {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+    }
+
+    .skillsContent {
+        min-height: 450px;
+        width: 80%; 
+        max-width: none; 
+    }
+
+    .leftArrow,
+    .rightArrow {
+        width: 30px;
+        height: 30px;
+    }
+
+    .leftArrow {
+        left: 15px;
+    }
+
+    .rightArrow {
+        right: 15px;
+    }
+
+    .skillCategory {
+        padding: 1.5rem;
+    }
+
+    .skillsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-auto-flow: column;
+        gap: 1.5rem 2.5rem;
+        max-width: 700px;
+        margin: 0 auto;
+        justify-items: stretch;
+        align-items: start;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .skillsContainer {
+        padding: 0 1rem;
+    }
+
+    .skillsTitle {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        margin-bottom: 2rem;
+    }
+
+    .skillsContent {
+        min-height: 600px; 
+        width: 90%; 
+        max-width: none;
+        height: auto;
+    }
+
+    .leftArrow,
+    .rightArrow {
+        width: 20px;
+        height: 20px;
+    }
+
+    .leftArrow {
+        left: 10px;
+    }
+
+    .rightArrow {
+        right: 10px;
+    }
+
+    .skillCategory {
+        padding: 1.5rem;
+        justify-content: flex-start;
+    }
+
+    .categoryTitle {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .skillsGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 1rem;
+        max-width: 300px;
+        width: 100%;
+        margin: 0 auto;
+        justify-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skillsContainer {
+        padding: 0 0.5rem;
+    }
+
+    .skillsContent {
+        min-height: 500px;
+        width: 95%; 
+        max-width: none;
+        height: auto;
+    }
+
+    .leftArrow,
+    .rightArrow {
+        width: 15px;
+        height: 15px;
+    }
+
+    .leftArrow {
+        left: 8px;
+    }
+
+    .rightArrow {
+        right: 8px;
+    }
+
+    .skillCategory {
+        padding: 1rem;
+    }
+
+    .skillsGrid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        max-width: 280px;
+        margin: 0 auto;
+        justify-items: center;
+    }
+}

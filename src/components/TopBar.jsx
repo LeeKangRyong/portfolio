@@ -1,4 +1,4 @@
-import './topBar.css';
+import './TopBar.css';
 import { Link } from 'react-scroll';
 import { useState, useEffect, useRef } from 'react';
 

@@ -1,4 +1,4 @@
-import './history.css';
+import './History.css';
 import HistoryDetail from '../components/HistoryDetail';
 
 function History() {
