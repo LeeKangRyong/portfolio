@@ -2,6 +2,8 @@ import './App.css';
 import { Link } from 'react-scroll';
 import { useState, useEffect, useRef } from 'react';
 import AboutMe from './pages/AboutMe';
+import History from './pages/History';
+import Skills from './pages/Skills';
 
 /* 1. section 별 내용 넣기 */
 /* 2. motion library로 스크롤 시 애니메이션 구현하기 */
@@ -22,7 +24,7 @@ function App() {
 
       const timeoutId = setTimeout(() => {
         setShowNavbar(false);
-      }, 800); 
+      }, 2000); 
 
       hideNavBarTimeoutRef.current = timeoutId;
     };
@@ -49,43 +51,20 @@ function App() {
       </header>
       
       <main>
-        <AboutMe />
-        
+        <section id="A">
+          <AboutMe /> 
+        </section>
         <section id='B'>
-          <h1>History</h1>
-          <h2>숭실대학교 IT대학 AI융합학부 재학 중 (2020.03 ~ 현재)</h2>
-          <h2>LG AIMERS 4기 수료 (2024.01 ~ 2024.02)</h2>
-          <h2>대학생 인공지능 개발 동아리 프로메테우스 6기 부원 (2024.09 ~ 현재)</h2>
-          <h2>SKT FLY AI CHALLENGERS 6기 AI 부트캠프 수료 (2024.12 ~ 2025.02)</h2>
-          <h2>B</h2>
-          <h2>B</h2>
-          <h2>B</h2>
-          <h2>B</h2>
-          <h2>B</h2>
-          <h2>B</h2>
+          <History />
         </section>
         <section id='C'>
           <h1>Skills & Tools</h1>
-          <h2>- Languages -</h2>
-          <h3>HTML</h3>
-          <h3>JavaScript</h3>
-          <h3>Python</h3>
-          <br />
-          <h2>- FE -</h2>
-          <h3>React</h3>
-          <h3>React Native</h3>
-          <h3>CSS</h3>
-          <h3>Zustand</h3>
-          <br />
-          <h2>- BE -</h2>
-          <h3>nodeJS</h3>
-          <h3>MySQL</h3>
-          <h3>ORM - prisma</h3>
-          <br />
-          <h2>- Tools -</h2>
-          <h3>Figma</h3>
-          <h3>Notion</h3>
-          <h3>Git</h3>
+          <div className="skillWrapper">
+            <Skills title="FE" />
+            <Skills title="BE" />
+            <Skills title="ETC" />
+          </div>
+        
         </section>
         <section id='D'>
           <h1>Projects</h1>

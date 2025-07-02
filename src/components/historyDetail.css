@@ -1,0 +1,101 @@
+.history {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    border-bottom: 1px white solid;
+    min-height: 20vh; /* 모든 history 항목 동일한 최소 높이 */
+}
+
+.titleWrapper {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descWrapper {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.title, .description {
+    white-space: pre-line;
+}
+
+.title, .duration {
+    text-align: center;
+}
+
+.title {
+    font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+}
+
+.duration {
+    margin-top: -3vh;
+    font-size: clamp(0.7rem, 1.0vw, 1.0rem);
+}
+
+.verticalLine {
+    width: 1px; 
+    height: 15vh;
+    background-color: white;
+    flex-shrink: 0; 
+    align-self: center;
+    opacity: 0.5;
+}
+
+@media (max-width: 1023px) {
+    .history {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+        border-bottom: none; 
+        position: relative;
+    }
+    
+    .history::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 1px;
+        background-color: white;
+    }
+
+    .titleWrapper,
+    .descWrapper {
+        width: 90%;
+        max-width: 500px;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding: 5px 0;
+        flex: unset;
+    }
+
+    .descWrapper {
+        margin-top: -100px;
+    }
+
+    h1,
+    .title,
+    .duration,
+    .description {
+        text-align: center;
+    }
+
+    .verticalLine {
+        visibility: hidden;
+    }
+}

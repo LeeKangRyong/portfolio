@@ -1,0 +1,20 @@
+.historyTitle {
+    margin-top: 0 auto;
+}
+
+.historyWrapper {
+    margin-top: 0; 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (max-width: 1023px) {
+    .historyWrapper {
+        align-items: center;
+        margin: 0 auto; 
+        padding: 0 10px; 
+        max-width: 100%; 
+    }
+}
