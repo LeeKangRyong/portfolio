@@ -3,15 +3,15 @@ import Stack from './Stack';
 import github from '../../assets/skills/github.png';
 
 function ProjectDetail({ imgUrl, title, description, member, role, duration, stacks, notionLink, githubLink }) {
+    
     const linkToProject = () => {
-        // 노션 페이지 조그맣게 띄우기 (width: 70%의 모달 형태로)
         console.log(notionLink);
     };
 
     const linkToGithub = () => {
-        // 깃허브 페이지 새로 띄워주기
-        console.log(githubLink);
+        window.open(githubLink, '_blank');
     };
+
 
     return (
         <article className="projectContainer">

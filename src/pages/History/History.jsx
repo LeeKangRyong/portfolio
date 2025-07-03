@@ -15,7 +15,7 @@ function History() {
                 <HistoryDetail 
                     title="LG AIMERS 4기" 
                     duration="2024.01 ~ 2024.02"
-                    description={`ML 기본교육 및 MQL 데이터 기반 B2B 영업 예측 모델 해커톤 수료\n데이터 EDA 및 전처리 담당`}
+                    description={`ML 교육 및 MQL 고객 기반 B2B 영업 예측 해커톤 수료\n데이터 EDA 및 전처리 담당`}
                 />
                 <HistoryDetail 
                     title="프로메테우스 6기" 

@@ -1,15 +1,16 @@
 .projectsContainer {
     width: 100%;
-    max-width: 87.5rem;
+    max-width: 100vw;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .projectsTitle {
     font-size: 4.5rem;
     font-weight: bold;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
     color: white;
     margin-top: 0;
@@ -19,8 +20,7 @@
 .projectsList {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    margin-bottom: 4rem;
+    gap: 3rem;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -30,7 +30,7 @@
 
     .projectsTitle {
         font-size: 3.5rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.8rem;
     }
 }
 
@@ -41,7 +41,7 @@
 
     .projectsTitle {
         font-size: 2.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -52,6 +52,6 @@
 
     .projectsTitle {
         font-size: 2rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.2rem;
     }
 }
