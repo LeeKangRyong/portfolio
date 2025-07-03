@@ -1,8 +1,48 @@
 .stackWrapper {
     background-color: white;
-    border-radius: 20px;
+    border-radius: 1.25rem;
+    padding: 0.6rem 1.2rem;
+    display: inline-block;
 }
 
 .stackName {
-    font-size: 0.5rem;
+    font-size: 0.9rem;
+    color: black !important;
+    margin: 0;
+    font-weight: 500;
+    white-space: nowrap;
+    text-shadow: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .stackWrapper {
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+    }
+
+    .stackName {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .stackWrapper {
+        padding: 0.4rem 0.8rem;
+        border-radius: 0.9rem;
+    }
+
+    .stackName {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .stackWrapper {
+        padding: 0.3rem 0.6rem;
+        border-radius: 0.8rem;
+    }
+
+    .stackName {
+        font-size: 0.7rem;
+    }
 }

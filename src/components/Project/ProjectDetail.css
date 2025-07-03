@@ -1,17 +1,254 @@
 .projectContainer {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
-    flex-direction: row;
-    width: 80%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+    padding: 2rem 2rem 2rem 2rem;
+    box-sizing: border-box;
+}
+
+.projectImage {
+    flex-shrink: 0;
+    width: 42rem;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    background: #f5f5dc;
+}
+
+.projectImage:hover {
+    transform: scale(1.02);
+}
+
+.projectDescWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 28rem;
+}
+
+.project1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
 }
 
 .project1Wrapper {
-    display: flex;
-    flex-direction: row;
+    flex: 1;
+}
+
+.project1Wrapper p:first-child {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    margin: 0 0 0.5rem 0;
+}
+
+.project1Wrapper p:last-child {
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+    line-height: 1.5;
 }
 
 .projectGithubWrapper {
-    background-color: white;
-    border-radius: 20px;
-    width: 6rem;      
-    height: 6rem;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.projectGithub {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 0.75rem;
+    background: white;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.projectGithub:hover {
+    transform: scale(1.1);
+}
+
+.project2 {
+    padding: 0;
+}
+
+.project2 p {
+    font-size: 0.9rem;
+    color: white;
+    margin: 0 0 0.3rem 0;
+    font-weight: 500;
+}
+
+.project2 p:last-child {
+    margin: 0;
+}
+
+.project3 {
+    padding: 0;
+}
+
+.project3 p:first-child {
+    font-size: 0.9rem;
+    color: white;
+    margin: 0 0 0.3rem 0;
+    font-weight: 600;
+}
+
+.project3 p:last-child {
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+    font-weight: 500;
+}
+
+.project4 {
+    padding: 0;
+}
+
+.project4 p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    margin: 0 0 0.8rem 0;
+}
+
+.stacksContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .projectContainer {
+        padding: 2rem 1.5rem 2rem 3rem;
+        gap: 2.5rem;
+    }
+
+    .projectImage {
+        width: 30rem;
+        height: 24rem;
+    }
+
+    .projectDescWrapper {
+        max-width: 24rem;
+        gap: 1.2rem;
+    }
+
+    .project1Wrapper p:first-child {
+        font-size: 1.6rem;
+    }
+
+    .project1Wrapper p:last-child {
+        font-size: 0.9rem;
+    }
+
+    .projectGithub {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .project4 p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .projectContainer {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .projectImage {
+        width: 28rem;
+        height: 22rem;
+    }
+
+    .projectDescWrapper {
+        max-width: 28rem;
+        gap: 1rem;
+    }
+
+    .project1Wrapper p:first-child {
+        font-size: 1.4rem;
+    }
+
+    .project1Wrapper p:last-child {
+        font-size: 0.85rem;
+    }
+
+    .projectGithub {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .project2 p,
+    .project3 p:first-child {
+        font-size: 0.8rem;
+    }
+
+    .project3 p:last-child {
+        font-size: 0.9rem;
+    }
+
+    .project4 p {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projectContainer {
+        padding: 1.5rem 0.5rem;
+        gap: 1.5rem;
+    }
+
+    .projectImage {
+        width: 24rem;
+        height: 18rem;
+    }
+
+    .projectDescWrapper {
+        max-width: 24rem;
+        gap: 0.8rem;
+    }
+
+    .project1Wrapper p:first-child {
+        font-size: 1.2rem;
+    }
+
+    .project1Wrapper p:last-child {
+        font-size: 0.8rem;
+    }
+
+    .projectGithub {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .project2 p,
+    .project3 p:first-child {
+        font-size: 0.75rem;
+    }
+
+    .project3 p:last-child {
+        font-size: 0.85rem;
+    }
+
+    .project4 p {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .stacksContainer {
+        gap: 0.4rem;
+    }
 }
