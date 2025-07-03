@@ -15,6 +15,11 @@
     margin-top: 0;
 }
 
+.skillsTitleDesc {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.4rem;
+}
 .skillsWrapper {
     display: flex;
     align-items: center;
@@ -141,8 +146,8 @@
 
     .leftArrow,
     .rightArrow {
-        width: 1.875rem;
-        height: 1.875rem;
+        width: 2.4rem;
+        height: 2.4rem;
     }
 
     .leftArrow {
@@ -203,8 +208,8 @@
 
     .leftArrow,
     .rightArrow {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 2rem;
+        height: 2rem;
     }
 
     .leftArrow {
@@ -261,8 +266,8 @@
 
     .leftArrow,
     .rightArrow {
-        width: 0.9375rem;
-        height: 0.9375rem;
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     .leftArrow {

@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+.projectImageWrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
 .projectImage {
     flex-shrink: 0;
     width: 38rem;
@@ -21,8 +26,25 @@
     margin: 0;
 }
 
-.projectImage:hover {
+.projectImageWrapper:hover .projectImage {
     transform: scale(1.02);
+    opacity: 0.7;
+}
+
+.detail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(211, 211, 211, 0.5);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .projectDescWrapper {

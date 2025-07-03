@@ -3,11 +3,12 @@ import Stack from './Stack';
 import github from '../../assets/skills/github.png';
 import useModal from '../../hooks/useModal';
 import Modal from './Modal';
-
+import useHover from '../../hooks/useHover';
 
 function Project({ imgUrl, title, description, member, role, duration, stacks, githubLink }) {
 
     const [modal, setModal] = useModal();
+    const [hover, onHover, notOnHover] = useHover();
 
     const linkToProject = () => {
         setModal();
@@ -17,10 +18,18 @@ function Project({ imgUrl, title, description, member, role, duration, stacks, g
         window.open(githubLink, '_blank');
     };
 
+    function Detail() {
+        return (
+            <button onClick={linkToProject} className="detail">상세 보기</button>
+        );
+    };
 
     return (
         <article className="projectContainer">
-            <img className="projectImage" src={imgUrl} alt="image" onClick={linkToProject} />
+            <div className="projectImageWrapper" onMouseOver={onHover} onMouseLeave={notOnHover}>
+                <img className="projectImage" src={imgUrl} alt="image" />
+                {hover && <Detail />}
+            </div>
             <div className="projectDescWrapper">
                 <div className="project1">
                     <div className="project1Wrapper">

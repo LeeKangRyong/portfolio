@@ -96,6 +96,7 @@ function Skills() {
     return (
         <article className='skillsContainer'>
             <h1 className='skillsTitle'>Skills & Tools</h1>
+            <p className="skillsTitleDesc">마우스를 움직여 나머지 기술들도 확인해보세요!</p>
             
             <div className='skillsWrapper'>
                 <div className='skillsContent'>
