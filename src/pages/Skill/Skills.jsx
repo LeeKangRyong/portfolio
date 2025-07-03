@@ -1,8 +1,8 @@
 import './Skills.css';
 import { useState, useEffect } from 'react';
-import SkillDetail from '../components/SkillDetail';
-import larrow from '../assets/skills/larrow.png';
-import rarrow from '../assets/skills/rarrow.png';
+import SkillDetail from '../../components/Skill/SkillDetail';
+import larrow from '../../assets/skills/larrow.png';
+import rarrow from '../../assets/skills/rarrow.png';
 
 function Skills() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,7 +10,7 @@ function Skills() {
 
     useEffect(() => {
         const loadIcons = async () => {
-            const iconModules = import.meta.glob('../assets/skills/*.png', { eager: true });
+            const iconModules = import.meta.glob('../../assets/skills/*.png', { eager: true });
             
             const icons = {};
             Object.entries(iconModules).forEach(([path, module]) => {

@@ -1,5 +1,5 @@
 import './History.css';
-import HistoryDetail from '../components/HistoryDetail';
+import HistoryDetail from '../../components/History/HistoryDetail';
 
 function History() {
     return (

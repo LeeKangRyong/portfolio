@@ -1,8 +1,9 @@
 import './App.css';
-import TopBar from './components/TopBar';
-import AboutMe from './pages/AboutMe';
-import History from './pages/History';
-import Skills from './pages/Skills';
+import TopBar from './components/TopBar/TopBar';
+import AboutMe from './pages/AboutMe/AboutMe';
+import History from './pages/History/History';
+import Skills from './pages/Skill/Skills';
+import Projects from './pages/Project/Projects';
 
 function App() {
   return (
@@ -21,10 +22,8 @@ function App() {
             <Skills />
         </section>
 
-        <section id='D'>
-          <h1>Projects</h1>
-          
-          <div>
+        <section id='D'>  
+          <Projects />        
             <div>
               <h2>Renew Wear</h2>
               <h3>FE, 디자인</h3>
@@ -90,7 +89,6 @@ function App() {
                 <p>서비스 이용성, 접근성, BM, 핵심 아이디어 등 다양한 고려할 점들을 생각하는 계기가 됨</p>
               </div>
             </div>
-          </div>
         </section>
       </main>
     </>
