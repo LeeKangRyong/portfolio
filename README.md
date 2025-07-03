@@ -1,12 +1,27 @@
-# React + Vite
+# 포트폴리오 사이트
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**사이트:** [krlee.netlify.app](https://krlee.netlify.app)
 
-Currently, two official plugins are available:
+<br />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 특징
 
-## Expanding the ESLint configuration
+### 기술 스택
+React + Vite, HTML, CSS, JavaScript, Framer Motion, Netlify
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 반응형 디자인
+```
+Desktop (1024px~) | Tablet (768~1023px) | Mobile (480~767px) | Small Mobile (~479px)
+```
+`media-query`와 `rem` 단위로 4가지 화면 크기에 대응  
+모바일에서는 세로 레이아웃, 데스크탑에서는 가로 레이아웃으로 자동 전환    
+텍스트 크기, 간격, 이미지 크기 모두 화면 크기에 맞춰 조정
+
+### 프로젝트 구조
+```
+src/
+├── pages/ 
+├── components/
+├── hooks/
+└── assets/  
+```
