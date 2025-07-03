@@ -14,7 +14,7 @@
 }
 
 .titleWrapper {
-    width: 320px;
+    width: 20rem;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@
 }
 
 .title {
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: white;
@@ -40,14 +40,14 @@
 }
 
 .duration {
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
     font-weight: 500;
 }
 
 .description {
-    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    font-size: 1.5rem;
     line-height: 1.5;
     color: white;
     margin: 0;
@@ -60,99 +60,99 @@
     background-color: rgba(255, 255, 255, 0.5);
     flex-shrink: 0;
     align-self: stretch;
-    min-height: 100px;
+    min-height: 6.25rem;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .history {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-    text-align: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        text-align: center;
     }
 
     .titleWrapper {
-    width: 100%;
+        width: 100%;
     }
 
     .descWrapper {
-    width: 100%;
-    align-items: center;
+        width: 100%;
+        align-items: center;
     }
 
     .description {
-    text-align: center;
-    font-size: clamp(1.1rem, 1.3vw, 1.3rem);
+        text-align: center;
+        font-size: 1.3rem;
     }
 
     .verticalLine {
-    display: none;
+        display: none;
     }
 
     .title {
-    font-size: clamp(1.3rem, 1.8vw, 1.8rem);
+        font-size: 1.8rem;
     }
 
     .duration {
-    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+        font-size: 1.1rem;
     }
 }
 
 @media screen and (max-width: 767px) {
     .history {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem 0;
-    text-align: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 0;
+        text-align: center;
     }
 
     .titleWrapper {
-    width: 100%;
+        width: 100%;
     }
 
     .descWrapper {
-    width: 100%;
-    align-items: center;
+        width: 100%;
+        align-items: center;
     }
 
     .title {
-    font-size: clamp(1.2rem, 1.6vw, 1.6rem);
-    margin-bottom: 0.3rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.3rem;
     }
 
     .duration {
-    font-size: clamp(0.85rem, 1vw, 1rem);
-    margin-bottom: 0.5rem;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     .description {
-    text-align: center;
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
-    line-height: 1.4;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1.4;
     }
 
     .verticalLine {
-    display: none;
+        display: none;
     }
 }
 
 @media screen and (max-width: 480px) {
     .history {
-    padding: 1rem 0;
-    gap: 0.8rem;
+        padding: 1rem 0;
+        gap: 0.8rem;
     }
 
     .title {
-    font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+        font-size: 1.4rem;
     }
 
     .duration {
-    font-size: clamp(0.8rem, 1vw, 0.95rem);
+        font-size: 0.95rem;
     }
 
     .description {
-    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+        font-size: 1.1rem;
     }
 }
