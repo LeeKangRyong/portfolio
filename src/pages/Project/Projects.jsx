@@ -1,5 +1,5 @@
 import './Projects.css';
-import ProjectDetail from '../../components/Project/ProjectDetail';
+import Project from '../../components/Project/Project';
 import project2 from '../../assets/projects/encap.png';
 
 function Projects() {
@@ -15,8 +15,7 @@ function Projects() {
             "stacks": [
                 "React", "Java\nScript", "HTML", "CSS"
             ],
-            "githubLink": "https://github.com/RenewWear/Front_Final",
-            "notionLink": "https://quirky-streetcar-a17.notion.site/ReNew-Wear-225523184d3c807bb8a8c41f0b73cac6"
+            "githubLink": "https://github.com/RenewWear/Front_Final"
         },
         {
             "id": 2,
@@ -29,8 +28,7 @@ function Projects() {
             "stacks": [
                 "React\nNative", "Java\nScript", "HTML", "CSS", "AWS", "NGINX", "pm2"
             ],
-            "githubLink": "https://github.com/encapmoments",
-            "notionLink": "https://quirky-streetcar-a17.notion.site/EncapMoments-225523184d3c80cf8432f944f9bf054f"
+            "githubLink": "https://github.com/encapmoments"
         },
         {
             "id": 3,
@@ -43,8 +41,7 @@ function Projects() {
             "stacks": [
                 "React", "Java\nScript", "HTML", "CSS", "Netlify"
             ],
-            "githubLink": "https://github.com/LeeKangRyong/portfolio",
-            "notionLink": "https://quirky-streetcar-a17.notion.site/225523184d3c809eb7f8ee2b26bc89b8?pvs=74"
+            "githubLink": "https://github.com/LeeKangRyong/portfolio"
         },
         {
             "id": 4,
@@ -59,8 +56,7 @@ function Projects() {
                 "Node.js", "MySQL", "Prisma", "AWS", "NGINX", "pm2",
                 "Github\nActions", "Ngrok", "Python", "FastAPI"
             ],
-            "githubLink": "https://github.com/prome-individual",
-            "notionLink": "https://quirky-streetcar-a17.notion.site/AI-Agent-225523184d3c804ba0c7e469c599803c"
+            "githubLink": "https://github.com/prome-individual"
         }
     ];
     console.log(projects);
@@ -70,7 +66,7 @@ function Projects() {
             <h1 className="projectsTitle">Projects</h1>
             <div className="projectsList">
                 {projects.map((project) => (
-                    <ProjectDetail 
+                    <Project 
                         key={project.id}
                         imgUrl={project.imgUrl}
                         title={project.title}
@@ -80,7 +76,6 @@ function Projects() {
                         duration={project.duration}
                         stacks={project.stacks}
                         githubLink={project.githubLink}
-                        notionLink={project.notionLink}
                     />
                 ))}
             </div>

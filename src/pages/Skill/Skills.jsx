@@ -1,6 +1,6 @@
 import './Skills.css';
 import { useState, useEffect } from 'react';
-import SkillDetail from '../../components/Skill/SkillDetail';
+import Skill from '../../components/Skill/Skill';
 import larrow from '../../assets/skills/larrow.png';
 import rarrow from '../../assets/skills/rarrow.png';
 
@@ -127,7 +127,7 @@ function Skills() {
                                 <h2 className='categoryTitle'>{skill.title}</h2>
                                 <div className='skillsGrid'>
                                     {skill.names.map((name, skillIndex) => (
-                                        <SkillDetail 
+                                        <Skill 
                                             key={skillIndex}
                                             name={name}
                                             description={skill.descriptions[skillIndex]}

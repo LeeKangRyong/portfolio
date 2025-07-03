@@ -1,6 +1,6 @@
-import './SkillDetail.css';
+import './Skill.css';
 
-function SkillDetail({ icon, name, description }) {
+function Skill({ icon, name, description }) {
     return (
         <article className="skillDetailContainer">
             <div className="skillWrapper">
@@ -14,4 +14,4 @@ function SkillDetail({ icon, name, description }) {
     );
 }
 
-export default SkillDetail;
+export default Skill;

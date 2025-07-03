@@ -1,11 +1,12 @@
 import './App.css';
 import TopBar from './components/TopBar/TopBar';
 import AboutMe from './pages/AboutMe/AboutMe';
-import History from './pages/History/History';
+import Histories from './pages/History/Histories';
 import Skills from './pages/Skill/Skills';
 import Projects from './pages/Project/Projects';
 
 function App() {
+
   return (
     <>
       <TopBar />
@@ -15,7 +16,7 @@ function App() {
         </section>
 
         <section id='B'>
-          <History />
+          <Histories />
         </section>
 
         <section id='C'>

@@ -1,6 +1,6 @@
-import './HistoryDetail.css';
+import './History.css';
 
-function HistoryDetail({ title, duration, description }) {
+function History({ title, duration, description }) {
     return (
         <div className="history">
             <div className="titleWrapper">
@@ -17,4 +17,4 @@ function HistoryDetail({ title, duration, description }) {
     );
 }
 
-export default HistoryDetail;
+export default History;

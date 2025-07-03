@@ -1,11 +1,16 @@
-import './ProjectDetail.css';
+import './Project.css';
 import Stack from './Stack';
 import github from '../../assets/skills/github.png';
+import useModal from '../../hooks/useModal';
+import Modal from './Modal';
 
-function ProjectDetail({ imgUrl, title, description, member, role, duration, stacks, notionLink, githubLink }) {
-    
+
+function Project({ imgUrl, title, description, member, role, duration, stacks, githubLink }) {
+
+    const [modal, setModal] = useModal();
+
     const linkToProject = () => {
-        console.log(notionLink);
+        setModal();
     };
 
     const linkToGithub = () => {
@@ -43,8 +48,9 @@ function ProjectDetail({ imgUrl, title, description, member, role, duration, sta
                     </div>
                 </div>
             </div>
+            {modal && <Modal setModal={setModal} />}
         </article>
     );
 };
 
-export default ProjectDetail;
+export default Project;
