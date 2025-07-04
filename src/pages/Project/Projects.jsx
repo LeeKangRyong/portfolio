@@ -2,7 +2,7 @@ import './Projects.css';
 import ProjectDetail from '../../components/Project/Project'; 
 import useAssets from '../../hooks/useAssets';
 
-import projects from './projectData';
+import projects from '../../data/projectData';
 
 function Projects() {
     const { assets: projectImages } = useAssets('projects');

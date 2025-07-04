@@ -5,7 +5,7 @@ import larrow from '../../assets/skills/larrow.png';
 import rarrow from '../../assets/skills/rarrow.png';
 import useAssets from '../../hooks/useAssets';
 
-import skills from './skillData';
+import skills from '../../data/skillData';
 
 function Skills() {
     const [currentIndex, setCurrentIndex] = useState(0);

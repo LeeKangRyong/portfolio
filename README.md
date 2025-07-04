@@ -13,7 +13,7 @@ React + Vite, HTML, CSS, JavaScript, Framer Motion, Netlify
 ### 반응형 디자인
 
 ```
-Desktop (1024px~) | Tablet (768~1023px) | Mobile (480~767px) | Small Mobile (~479px)
+Desktop (1024px~) | Tablet (768~1023px) | Mobile (480~767px) | Smaller Mobile (~479px)
 ```
 
 `media-query`와 `rem` 단위로 4가지 화면 크기에 대응  
@@ -32,9 +32,10 @@ useModal: 모달의 열림/닫힘 상태와 선택된 프로젝트 정보를 관
 
 ```
 src/
-├── pages/
-├── components/
-├── hooks/
-└── assets/
+├── pages/       하나의 페이지 or 화면 구성
+├── components/  재사용되는 UI 요소
+├── hooks/       재사용 가능한 상태 로직
+├── data/        project, skill 정보
+└── assets/      이미지 데이터
 App.jsx
 ```
