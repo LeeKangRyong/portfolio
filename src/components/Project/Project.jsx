@@ -2,7 +2,7 @@ import './Project.css';
 import Stack from './Stack';
 import github from '../../assets/skills/github.png';
 import useModal from '../../hooks/useModal';
-import Modal from './Modal';
+import Modal from '../Modal/Modal';
 import useHover from '../../hooks/useHover';
 
 function Project({ imgUrl, title, description, member, role, duration, stacks, githubLink }) {
@@ -57,7 +57,7 @@ function Project({ imgUrl, title, description, member, role, duration, stacks, g
                     </div>
                 </div>
             </div>
-            {modal && <Modal setModal={setModal} />}
+            {modal && <Modal setModal={setModal} title={title} duration={duration} />}
         </article>
     );
 };

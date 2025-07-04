@@ -1,0 +1,199 @@
+.modalContaner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContentWrapper {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.3);
+    max-width: 60rem;
+    width: 90%;
+    max-height: 90vh;
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalContentWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.modalContentWrapper {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.modalTop {
+    top: 0;
+    height: 20vh;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    padding: 1rem 0;
+}
+
+.modalTopContentTitle, .modalTopContentDuration {
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+
+.modalTopContentTitle {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.modalTopContentDuration {
+    font-size: 1.2rem;
+}
+
+.modalContent {
+    padding: 2rem;
+    background-color: white;
+    flex: 1;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.modalContent p, h3 {
+    color: black;
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(211, 211, 211, 1);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.modalCloseButton:hover {
+    background-color: rgba(211, 211, 211, 0.5);
+}
+
+.modalCloseButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.125rem rgba(0, 123, 255, 0.5);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .modalContentWrapper {
+        border-radius: 0.4rem;
+        max-width: 40rem;
+        max-height: 85vh;
+    }
+
+    .modalTop {
+        border-top-left-radius: 0.4rem;
+        border-top-right-radius: 0.4rem;
+    }
+
+    .modalContent {
+        padding: 1.75rem;
+        border-bottom-left-radius: 0.4rem;
+        border-bottom-right-radius: 0.4rem;
+    }
+
+    .modalContent p {
+        font-size: 1.1rem;
+        margin: 0 0 0.875rem 0;
+    }
+
+    .modalCloseButton {
+        margin: 0.875rem 1.75rem 1.75rem 1.75rem;
+        padding: 0.6875rem 1.25rem;
+        font-size: 0.9375rem;
+        border-radius: 0.4375rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .modalContentWrapper {
+        border-radius: 0.3rem;
+        max-width: 30rem;
+        width: 95%;
+        max-height: 85vh;
+    }
+
+    .modalTop {
+        border-top-left-radius: 0.3rem;
+        border-top-right-radius: 0.3rem;
+    }
+
+    .modalContent {
+        padding: 1.5rem;
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+    }
+
+    .modalContent p {
+        font-size: 1rem;
+        margin: 0 0 0.75rem 0;
+    }
+
+    .modalCloseButton {
+        margin: 0.75rem 1.5rem 1.5rem 1.5rem;
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+        border-radius: 0.375rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modalContentWrapper {
+        border-radius: 0.2rem;
+        max-width: 20rem;
+        width: 95%;
+        max-height: 80vh;
+    }
+
+    .modalTop {
+        border-top-left-radius: 0.2rem;
+        border-top-right-radius: 0.2rem;
+    }
+
+    .modalContent {
+        padding: 1rem;
+        border-bottom-left-radius: 0.2rem;
+        border-bottom-right-radius: 0.2rem;
+    }
+
+    .modalContent p {
+        font-size: 0.9rem;
+        margin: 0 0 0.625rem 0;
+    }
+
+    .modalCloseButton {
+        margin: 0.625rem 1rem 1rem 1rem;
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8125rem;
+        border-radius: 0.3125rem;
+    }
+}
