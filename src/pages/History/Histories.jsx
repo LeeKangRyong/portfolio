@@ -38,14 +38,16 @@ function Histories() {
         <motion.article 
             className="historyContainer"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
+            viewport={{ amount: 0.2 }}
         >
             <motion.h1 
                 className="historyTitle"
                 initial={{ y: -50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ amount: 0.2 }}
             >
                 History
             </motion.h1>
@@ -71,7 +73,7 @@ function Histories() {
                             type: "spring",
                             stiffness: 100
                         }}
-                        viewport={{ once: true, amount: 0.3 }}
+                        viewport={{ amount: 0.3 }}
                         whileHover={{
                             scale: 1.02,
                             y: -5,

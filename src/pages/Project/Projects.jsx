@@ -8,38 +8,28 @@ function Projects() {
     const { assets: projectImages } = useAssets('projects');
 
     return (
-        <motion.article 
-            className="projectsContainer"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-        >
+        <article className="projectsContainer">
             <motion.h1 
                 className="projectsTitle"
                 initial={{ y: -50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ amount: 0.3 }}
             >
                 Projects
             </motion.h1>
             
-            <motion.div 
-                className="projectsList"
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-            >
+            <div className="projectsList">
                 {projects.map((project, index) => (
                     <motion.div
                         key={project.id}
-                        initial={{ opacity: 0, y: 100 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
                         transition={{ 
-                            duration: 0.8, 
-                            delay: index * 0.2,
+                            duration: 0.6,
                             ease: "easeOut"
                         }}
-                        viewport={{ once: true, amount: 0.1 }}
+                        viewport={{ amount: 0.2 }}
                     >
                         <ProjectDetail 
                             titleImg={projectImages[project.titleImg]}
@@ -57,8 +47,8 @@ function Projects() {
                         />
                     </motion.div>
                 ))}
-            </motion.div>
-        </motion.article>
+            </div>
+        </article>
     );
 }
 
