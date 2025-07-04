@@ -7,21 +7,34 @@
 ## 특징
 
 ### 기술 스택
+
 React + Vite, HTML, CSS, JavaScript, Framer Motion, Netlify
 
 ### 반응형 디자인
+
 ```
 Desktop (1024px~) | Tablet (768~1023px) | Mobile (480~767px) | Small Mobile (~479px)
 ```
+
 `media-query`와 `rem` 단위로 4가지 화면 크기에 대응  
-모바일에서는 세로 레이아웃, 데스크탑에서는 가로 레이아웃으로 자동 전환    
+모바일에서는 세로 레이아웃, 데스크탑에서는 가로 레이아웃으로 자동 전환  
 텍스트 크기, 간격, 이미지 크기 모두 화면 크기에 맞춰 조정
 
+### Custom Hooks
+
+```
+useAssets: assets 내 파일 경로를 일일이 입력하지 않고, 문자열 형식으로 간단히 접근함 (ex. ../assets/~~~/ex.png => "ex")
+useHover: 컴포넌트의 hover 상태를 감지하고 관리하여 인터랙티브 UI를 구현
+useModal: 모달의 열림/닫힘 상태와 선택된 프로젝트 정보를 관리하여 모달 컴포넌트를 재사용
+```
+
 ### 프로젝트 구조
+
 ```
 src/
-├── pages/ 
+├── pages/
 ├── components/
 ├── hooks/
-└── assets/  
+└── assets/
+App.jsx
 ```

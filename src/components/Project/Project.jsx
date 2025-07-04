@@ -5,8 +5,20 @@ import useModal from '../../hooks/useModal';
 import Modal from '../Modal/Modal';
 import useHover from '../../hooks/useHover';
 
-function Project({ imgUrl, title, description, member, role, duration, stacks, githubLink }) {
-
+function Project({ 
+    titleImg, 
+    title, 
+    description, 
+    member, 
+    role, 
+    duration, 
+    stacks, 
+    githubLink,
+    resultImg,
+    arcImg,
+    faqData,
+    topcolor
+}) {
     const [modal, setModal] = useModal();
     const [hover, onHover, notOnHover] = useHover();
 
@@ -27,7 +39,7 @@ function Project({ imgUrl, title, description, member, role, duration, stacks, g
     return (
         <article className="projectContainer">
             <div className="projectImageWrapper" onMouseOver={onHover} onMouseLeave={notOnHover}>
-                <img className="projectImage" src={imgUrl} alt="image" />
+                <img className="projectImage" src={titleImg} alt="image" />
                 {hover && <Detail />}
             </div>
             <div className="projectDescWrapper">
@@ -57,7 +69,17 @@ function Project({ imgUrl, title, description, member, role, duration, stacks, g
                     </div>
                 </div>
             </div>
-            {modal && <Modal setModal={setModal} title={title} duration={duration} />}
+            {modal && (
+                <Modal 
+                    setModal={setModal} 
+                    title={title} 
+                    duration={duration}
+                    resultImg={resultImg}
+                    arcImg={arcImg}
+                    faqData={faqData}
+                    topcolor={topcolor}
+                />
+            )}
         </article>
     );
 };

@@ -39,7 +39,6 @@
     top: 0;
     height: 20vh;
     width: 100%;
-    background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,12 +79,43 @@
     line-height: 1.5;
 }
 
+.modalContentResult {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.modalContentResult img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modalContentArc {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.modalContentArc img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modalContentFAQ {
+    margin-top: 1rem;
+}
+
 .modalCloseButton {
     position: absolute;
     top: 0;
     right: 0;
     background-color: rgba(211, 211, 211, 1);
-    color: white;
+    color: black;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -126,6 +156,16 @@
         margin: 0 0 0.875rem 0;
     }
 
+    .modalContentResult {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.875rem;
+        margin-bottom: 1.75rem;
+    }
+    
+    .modalContentArc {
+        margin-bottom: 1.75rem;
+    }
+
     .modalCloseButton {
         margin: 0.875rem 1.75rem 1.75rem 1.75rem;
         padding: 0.6875rem 1.25rem;
@@ -158,6 +198,16 @@
         margin: 0 0 0.75rem 0;
     }
 
+    .modalContentResult {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .modalContentArc {
+        margin-bottom: 1.5rem;
+    }
+
     .modalCloseButton {
         margin: 0.75rem 1.5rem 1.5rem 1.5rem;
         padding: 0.625rem 1rem;
@@ -188,6 +238,15 @@
     .modalContent p {
         font-size: 0.9rem;
         margin: 0 0 0.625rem 0;
+    }
+
+    .modalContentResult {
+        gap: 0.625rem;
+        margin-bottom: 1rem;
+    }
+    
+    .modalContentArc {
+        margin-bottom: 1rem;
     }
 
     .modalCloseButton {

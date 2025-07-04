@@ -14,7 +14,7 @@ function Projects() {
                 {projects.map((project) => (
                     <ProjectDetail 
                         key={project.id}
-                        imgUrl={projectImages[project.imgUrl]}
+                        titleImg={projectImages[project.titleImg]}
                         title={project.title}
                         description={project.description}
                         member={project.member}
@@ -22,7 +22,10 @@ function Projects() {
                         duration={project.duration}
                         stacks={project.stacks}
                         githubLink={project.githubLink}
-                        notionLink={project.notionLink}
+                        resultImg={project.resultImg}
+                        arcImg={project.arcImg}
+                        faqData={project.faqData}
+                        topcolor={project.topcolor}
                     />
                 ))}
             </div>
