@@ -4,12 +4,53 @@ import AboutMe from './pages/AboutMe/AboutMe';
 import Histories from './pages/History/Histories';
 import Skills from './pages/Skill/Skills';
 import Projects from './pages/Project/Projects';
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import turtle from './assets/turtle.png';
 
 function App() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
     <>
       <TopBar />
+      
+      <motion.img
+        src={turtle}
+        alt="감자"
+        style={{
+          position: 'fixed',
+          width: '3rem',
+          height: '3rem',
+          borderRadius: '50%',
+          pointerEvents: 'none',
+          zIndex: 9999,
+          opacity: 0.8
+        }}
+        animate={{
+          x: mousePosition.x - 30,
+          y: mousePosition.y - 30,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 100, 
+          damping: 20,   
+          mass: 0.5       
+        }}
+      />
+      
       <main>
         <section id="A">
           <AboutMe /> 
