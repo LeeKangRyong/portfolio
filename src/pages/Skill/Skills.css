@@ -167,7 +167,6 @@
         margin-bottom: 1.5rem;
     }
 
-    /* 태블릿에서는 2x4 그리드 유지하되 크기 조정 */
     .skillsGrid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, auto);
@@ -179,7 +178,7 @@
         align-items: center;
     }
 
-    /* 태블릿 BE 섹션 */
+    /* BE */
     .skillCategory:nth-child(2) .skillsGrid {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, auto);
@@ -230,7 +229,6 @@
         margin-bottom: 1.5rem;
     }
 
-    /* 모바일에서는 1x8 세로 그리드 */
     .skillsGrid {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(8, auto);
@@ -242,7 +240,7 @@
         justify-items: center;
     }
 
-    /* 모바일 BE 섹션도 1열 유지 */
+    /* BE */
     .skillCategory:nth-child(2) .skillsGrid {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, auto);

@@ -49,9 +49,7 @@ function Skills() {
                         />
                     )}
                     
-                    <div className='skillsSlider' style={{
-                        transform: `translateX(-${currentIndex * 100}%)`
-                    }}>
+                    <div className='skillsSlider' style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                         {skills.map((skill, index) => (
                             <div key={index} className='skillCategory'>
                                 <h2 className='categoryTitle'>{skill.title}</h2>

@@ -1,10 +1,21 @@
 import './Modal.css';
+import { useState } from 'react';
 import useAssets from '../../hooks/useAssets';
 import FAQ from '../FAQ/FAQ';
+import Zoom from '../Zoom/Zoom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function Modal({ setModal, title, duration, resultImg, arcImg, faqData, topcolor }) {
     const { assets: projects } = useAssets('projects');
+    const [zoomImage, setZoomImage] = useState(null);
+
+    const handleImageClick = (imageSrc, altText) => {
+        setZoomImage({ src: imageSrc, alt: altText });
+    };
+
+    const closeZoom = () => {
+        setZoomImage(null);
+    };
 
     return (
         <AnimatePresence>
@@ -19,36 +30,14 @@ function Modal({ setModal, title, duration, resultImg, arcImg, faqData, topcolor
                 <motion.div 
                     className="modalContentWrapper" 
                     onClick={(e) => e.stopPropagation()}
-                    initial={{ 
-                        scale: 0.3, 
-                        rotate: -15, 
-                        y: 100,
-                        opacity: 0,
-                        originX: 0.5,
-                        originY: 0.5
-                    }}
-                    animate={{ 
-                        scale: 1, 
-                        rotate: 0, 
-                        y: 0,
-                        opacity: 1 
-                    }}
-                    exit={{ 
-                        scale: 0.3, 
-                        rotate: 15, 
-                        y: -100,
-                        opacity: 0 
-                    }}
-                    transition={{ 
-                        type: "spring", 
-                        stiffness: 300, 
-                        damping: 25,
-                        duration: 0.6
-                    }}
+                    initial={{ scale: 0.3, rotate: -15, y: 100, opacity: 0, originX: 0.5, originY: 0.5 }}
+                    animate={{ scale: 1, rotate: 0, y: 0, opacity: 1 }}
+                    exit={{ scale: 0.3, rotate: 15, y: -100,opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 25, duration: 0.6 }}
                 >
                     <motion.div 
                         className="modalTop" 
-                        style={{ backgroundColor: topcolor}}
+                        style={{ backgroundColor: topcolor }}
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
@@ -69,22 +58,6 @@ function Modal({ setModal, title, duration, resultImg, arcImg, faqData, topcolor
                         >
                             {duration}
                         </motion.p>
-                        <motion.button 
-                            onClick={setModal} 
-                            className="modalCloseButton"
-                            initial={{ scale: 0, rotate: -90 }}
-                            animate={{ scale: 1, rotate: 0 }}
-                            transition={{ delay: 0.5, duration: 0.3 }}
-                            whileHover={{ 
-                                scale: 1.1, 
-                                backgroundColor: "rgba(255, 0, 0, 0.2)",
-                                rotate: 90,
-                                transition: { duration: 0.2 }
-                            }}
-                            whileTap={{ scale: 0.9 }}
-                        >
-                            ✕
-                        </motion.button>
                     </motion.div>
                     
                     <motion.div 
@@ -115,15 +88,10 @@ function Modal({ setModal, title, duration, resultImg, arcImg, faqData, topcolor
                                     alt={`project result ${index + 1}`}
                                     initial={{ scale: 0.8, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
-                                    transition={{ 
-                                        delay: 0.7 + index * 0.1, 
-                                        duration: 0.4 
-                                    }}
-                                    whileHover={{
-                                        scale: 1.05,
-                                        boxShadow: "0 8px 25px rgba(0, 0, 0, 0.2)",
-                                        transition: { duration: 0.3 }
-                                    }}
+                                    transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
+                                    whileHover={{ scale: 1.05, boxShadow: "0 8px 25px rgba(0, 0, 0, 0.2)", transition: { duration: 0.3 } }}
+                                    onClick={() => handleImageClick(projects[imgKey], `project result ${index + 1}`)}
+                                    style={{ cursor: 'pointer' }}
                                 />
                             ))}
                         </motion.div>
@@ -150,11 +118,9 @@ function Modal({ setModal, title, duration, resultImg, arcImg, faqData, topcolor
                                     initial={{ scale: 0.9, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
                                     transition={{ delay: 1, duration: 0.4 }}
-                                    whileHover={{
-                                        scale: 1.02,
-                                        boxShadow: "0 8px 25px rgba(0, 0, 0, 0.2)",
-                                        transition: { duration: 0.3 }
-                                    }}
+                                    whileHover={{ scale: 1.02, boxShadow: "0 8px 25px rgba(0, 0, 0, 0.2)", transition: { duration: 0.3 } }}
+                                    onClick={() => handleImageClick(projects[arcImg], "project architecture")}
+                                    style={{ cursor: 'pointer' }}
                                 />
                             )}
                         </motion.div>
@@ -179,20 +145,17 @@ function Modal({ setModal, title, duration, resultImg, arcImg, faqData, topcolor
                                     key={index}
                                     initial={{ x: -20, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
-                                    transition={{ 
-                                        delay: 1.3 + index * 0.1, 
-                                        duration: 0.4 
-                                    }}
+                                    transition={{ delay: 1.3 + index * 0.1, duration: 0.4 }}
                                 >
-                                    <FAQ 
-                                        question={faq.question}
-                                        answer={faq.answer}
-                                    />
+                                    <FAQ question={faq.question} answer={faq.answer} />
                                 </motion.div>
                             ))}
                         </motion.div>
                     </motion.div>
                 </motion.div>
+                {zoomImage && (
+                    <Zoom imageSrc={zoomImage.src} altText={zoomImage.alt} onClose={closeZoom} />
+                )}
             </motion.article>
         </AnimatePresence>
     );

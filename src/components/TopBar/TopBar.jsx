@@ -8,7 +8,6 @@ function TopBar() {
     const hideNavBarTimeoutRef = useRef(null);
     const { scrollY } = useScroll();
     
-    // 스크롤에 따른 배경색 변화
     const backgroundColor = useTransform(
         scrollY,
         [0, 50],
@@ -69,11 +68,7 @@ function TopBar() {
                     <Link to='A' smooth={true} duration={500}>
                         <motion.span 
                             className='navText'
-                            whileHover={{ 
-                                scale: 1.1,
-                                color: "#adff2f",
-                                transition: { duration: 0.2 }
-                            }}
+                            whileHover={{ scale: 1.1, color: "#adff2f", transition: { duration: 0.2 } }}
                             whileTap={{ scale: 0.95 }}
                         >
                             About me
@@ -82,11 +77,7 @@ function TopBar() {
                     <Link to='B' smooth={true} duration={500}>
                         <motion.span 
                             className='navText'
-                            whileHover={{ 
-                                scale: 1.1,
-                                color: "#adff2f",
-                                transition: { duration: 0.2 }
-                            }}
+                            whileHover={{  scale: 1.1, color: "#adff2f", transition: { duration: 0.2 } }}
                             whileTap={{ scale: 0.95 }}
                         >
                             History
@@ -95,11 +86,7 @@ function TopBar() {
                     <Link to='C' smooth={true} duration={500}>
                         <motion.span 
                             className='navText'
-                            whileHover={{ 
-                                scale: 1.1,
-                                color: "#adff2f",
-                                transition: { duration: 0.2 }
-                            }}
+                            whileHover={{ scale: 1.1, color: "#adff2f", transition: { duration: 0.2 } }}
                             whileTap={{ scale: 0.95 }}
                         >
                             Skills & Tools
@@ -108,11 +95,7 @@ function TopBar() {
                     <Link to='D' smooth={true} duration={500}>
                         <motion.span 
                             className='navText'
-                            whileHover={{ 
-                                scale: 1.1,
-                                color: "#adff2f",
-                                transition: { duration: 0.2 }
-                            }}
+                            whileHover={{ scale: 1.1, color: "#adff2f", transition: { duration: 0.2 } }}
                             whileTap={{ scale: 0.95 }}
                         >
                             Projects

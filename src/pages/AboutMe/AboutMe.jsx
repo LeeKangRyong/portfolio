@@ -44,10 +44,7 @@ function AboutMe() {
                                     key={index}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ 
-                                        delay: 0.8 + index * 0.02,
-                                        duration: 0.1 
-                                    }}
+                                    transition={{ delay: 0.8 + index * 0.02, duration: 0.1 }}
                                     viewport={{ amount: 0.3 }}
                                 >
                                     {char}
@@ -106,17 +103,8 @@ function AboutMe() {
                         alt="증명사진"
                         initial={{ scale: 0, rotate: -180 }}
                         whileInView={{ scale: 1, rotate: 0 }}
-                        transition={{ 
-                            type: "spring", 
-                            stiffness: 260, 
-                            damping: 20,
-                            delay: 0.6 
-                        }}
-                        whileHover={{ 
-                            scale: 1.05, 
-                            rotate: 5,
-                            transition: { duration: 0.3 }
-                        }}
+                        transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.6 }}
+                        whileHover={{ scale: 1.05, rotate: 5, transition: { duration: 0.3 } }}
                         viewport={{ amount: 0.3 }}
                     />
                 </motion.div>
@@ -168,20 +156,13 @@ function AboutMe() {
                 >
                     <motion.div 
                         className="gamjaContainer"
-                        whileHover={{ 
-                            scale: 1.1,
-                            rotate: [0, -5, 5, 0],
-                            transition: { duration: 0.5 }
-                        }}
+                        whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0], transition: { duration: 0.5 } }}
                     >
                         <motion.img 
                             className="gamja" 
                             src={gamja} 
                             alt="감자"
-                            whileHover={{
-                                scale: 1.05,
-                                transition: { duration: 0.3 }
-                            }}
+                            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
                         />
                     </motion.div>
                     <motion.p 

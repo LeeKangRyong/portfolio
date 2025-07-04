@@ -7,36 +7,23 @@ function Skill({ icon, name, description }) {
             className="skillDetailContainer"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ 
-                duration: 0.6,
-                ease: "easeOut"
-            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ amount: 0.3 }}
             whileHover={{
                 scale: 1.05,
                 y: -8,
-                transition: { 
-                    duration: 0.3,
-                    type: "spring",
-                    stiffness: 300
-                }
+                transition: { duration: 0.3, type: "spring", stiffness: 300 }
             }}
         >
             <motion.div 
                 className="skillWrapper"
-                whileHover={{
-                    scale: 1.1,
-                    transition: { duration: 0.2 }
-                }}
+                whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
             >
                 <motion.img 
                     className="skillIcon" 
                     src={icon} 
                     alt="icon"
-                    whileHover={{
-                        rotate: [0, -10, 10, 0],
-                        transition: { duration: 0.4 }
-                    }}
+                    whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.4 } }}
                 />
                 <p className="skillName">{name}</p>
             </motion.div>

@@ -61,11 +61,7 @@ function Histories() {
                             opacity: 0,
                             scale: 0.8 
                         }}
-                        whileInView={{ 
-                            x: 0, 
-                            opacity: 1,
-                            scale: 1 
-                        }}
+                        whileInView={{ x: 0, opacity: 1, scale: 1 }}
                         transition={{ 
                             duration: 0.8, 
                             delay: history.delay,
@@ -74,11 +70,7 @@ function Histories() {
                             stiffness: 100
                         }}
                         viewport={{ amount: 0.3 }}
-                        whileHover={{
-                            scale: 1.02,
-                            y: -5,
-                            transition: { duration: 0.3 }
-                        }}
+                        whileHover={{ scale: 1.02, y: -5, transition: { duration: 0.3 } }}
                     >
                         <History 
                             title={history.title}

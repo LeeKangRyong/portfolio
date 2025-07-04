@@ -25,10 +25,7 @@ function Projects() {
                         key={project.id}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        transition={{ 
-                            duration: 0.6,
-                            ease: "easeOut"
-                        }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
                         viewport={{ amount: 0.2 }}
                     >
                         <ProjectDetail 
