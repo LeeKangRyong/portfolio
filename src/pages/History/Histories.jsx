@@ -33,7 +33,7 @@ function Histories() {
                         }}
                         whileInView={{ x: 0, opacity: 1, scale: 1 }}
                         transition={{ 
-                            duration: 0.8, 
+                            duration: 0.6, 
                             delay: history.delay,
                             ease: "easeOut",
                             type: "spring",
