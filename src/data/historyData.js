@@ -16,14 +16,14 @@ const histories = [
     {
         title: "프로메테우스 6기",
         duration: "2024.09 ~ 현재",
-        description: "인공지능 기반 서비스 개발 동아리 6기 부원",
+        description: "인공지능 기반 서비스 개발 동아리 6기 부원\n서비스 개발 및 AI 모델 연동 담당",
         direction: 'left', 
         delay: 0.4
     },
     {
         title: "SKT FLY AI CHALLENGERS 6기",
         duration: "2024.12 ~ 2025.02",
-        description: "AI(ML/DL/LLM/OpenCV 등) 부트캠프 수료\nESG 및 창업 기반 Flutter를 통한 AI 어플리케이션 제작",
+        description: "AI(ML/DL/LLM/OpenCV 등) 부트캠프 수료",
         direction: 'right',
         delay: 0.6
     }

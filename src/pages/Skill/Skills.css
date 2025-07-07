@@ -91,9 +91,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-shrink: 0;
-    padding: 1.5rem;
+    padding: 0.5rem 1.5rem 1.5rem;
     box-sizing: border-box;
 }
 
@@ -101,7 +101,7 @@
     font-size: 2.5rem;
     font-weight: bold;
     color: white;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.4rem;
     text-align: center;
 }
 
@@ -116,17 +116,8 @@
     margin: 0 auto;
     justify-items: center;
     align-items: center;
-}
-
-/* BE */
-.skillCategory:nth-child(2) .skillsGrid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto);
-    grid-auto-flow: row;
-    max-width: 25rem;
-    gap: 1.5rem;
-    justify-items: center;
-    align-items: center;
+    flex: 1;
+    align-content: center;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -159,12 +150,12 @@
     }
 
     .skillCategory {
-        padding: 1.5rem 1rem;
+        padding: 0.5rem 1rem 1.5rem;
     }
 
     .categoryTitle {
         font-size: 2.2rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.6rem;
     }
 
     .skillsGrid {
@@ -176,15 +167,8 @@
         margin: 0 auto;
         justify-items: center;
         align-items: center;
-    }
-
-    /* BE */
-    .skillCategory:nth-child(2) .skillsGrid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, auto);
-        grid-auto-flow: row;
-        max-width: 22rem;
-        gap: 1.5rem;
+        flex: 1;
+        align-content: center;
     }
 }
 
@@ -220,13 +204,13 @@
     }
 
     .skillCategory {
-        padding: 1.5rem 0.5rem;
+        padding: 0.5rem 0.5rem 1.5rem;
         justify-content: flex-start;
     }
 
     .categoryTitle {
         font-size: 2rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.6rem;
     }
 
     .skillsGrid {
@@ -238,15 +222,6 @@
         width: 100%;
         margin: 0 auto;
         justify-items: center;
-    }
-
-    /* BE */
-    .skillCategory:nth-child(2) .skillsGrid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, auto);
-        grid-auto-flow: row;
-        max-width: 20rem;
-        gap: 1rem;
     }
 }
 

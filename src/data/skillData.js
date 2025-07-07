@@ -2,20 +2,19 @@ const skills = [
     {
         title: 'FE',
         names: [
-            'React', `React\nNative`, 'Flutter', 'Zustand',
+            'React', `React\nNative`, 'Zustand',
             `Java\nScript`, 'HTML', 'CSS'
         ],
         descriptions: [
-            'UI 라이브러리로 컴포넌트 기반 개발',
-            '모바일 앱 개발 프레임워크',
-            '크로스 플랫폼 모바일 앱 개발',
-            'React 상태 관리 라이브러리',
-            '웹 개발의 핵심 프로그래밍 언어',
-            '웹 페이지 구조를 만드는 마크업 언어',
-            '웹 페이지 스타일링 언어'
+            'components, custom hook 등 코드\n최적화를 항상 고려하며 개발합니다.',
+            'Android 개발 시, React 문법과 \n함께 개발을 수행합니다.',
+            'accessToken을 관리할 때\n주로 사용하였습니다.',
+            '현재 주 언어로써 집중적으로\n 공부 중입니다.',
+            'semantic tag를 사용하여\n코드 가독성을 높입니다.',
+            'media query + rem, flexbox\n조합을 주로 사용합니다.'
         ],
         icons: [
-            'react', 'react', 'flutter', 'zustand',
+            'react', 'react', 'zustand',
             'js', 'html', 'css'
         ]
     },
@@ -25,9 +24,9 @@ const skills = [
             'Node.js', 'MySQL', 'Prisma'
         ],
         descriptions: [
-            'JavaScript 기반 서버 사이드 런타임',
-            '관계형 데이터베이스 관리 시스템',
-            'TypeScript 기반 ORM 도구'
+            'NodeJS를 통한 백엔드\n개발이 가능합니다',
+            'MySQL을 통한 DB 설계 및 백엔드 개발이 가능합니다.',
+            '다양한 DB에 대응하고 같은 언어로써\n코드 가독성이 높아져 사용합니다.'
         ],
         icons: [
             'nodejs', 'mysql', 'prisma'
@@ -40,14 +39,14 @@ const skills = [
             'AWS', 'Docker', `Github\nActions`
         ],
         descriptions: [
-            '데이터 분석 및 AI 개발 언어',
-            '머신러닝 및 딥러닝 기술',
-            '협업 및 문서화 도구',
-            'UI/UX 디자인 도구',
-            '버전 관리 시스템',
-            '클라우드 서비스 플랫폼',
-            '컨테이너화 플랫폼',
-            'CI/CD 자동화 도구'
+            'Python 및 AI Framework,\nLibrary 사용이 가능합니다.',
+            '부트캠프, 학교 수업, 동아리 \n등을 통해 이해도가 높습니다.',
+            '템플릿을 직접 만들고 자동화하여\n프로젝트를 수행합니다.',
+            '피그마와 함께 UI 구현을\n많이 해왔습니다.',
+            'organiztaion을 만들어 팀원들과\n협업을 많이 해왔습니다.',
+            'EC2, Elastic IP, 보안 그룹 등\n서버 배포에 능숙합니다.',
+            '주로 AI 모델을 각각 docker로\n씌워 패키지 충돌을 방지합니다.',
+            '빠른 개발 시 , BE 수정 및 배포를\n빠르게 하기 위해 사용했습니다.'
         ],
         icons: [
             'python', 'ai', 'notion', 'figma', 'github',
