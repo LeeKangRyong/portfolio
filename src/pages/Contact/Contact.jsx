@@ -5,22 +5,10 @@ import { useState } from 'react';
 function Contact() {
     const [emailCopied, setEmailCopied] = useState(false);
 
-    const handleEmailClick = async () => {
-        try {
-            await navigator.clipboard.writeText('gaiogo2@naver.com');
-            setEmailCopied(true);
-            setTimeout(() => setEmailCopied(false), 2000);
-        } catch (err) {
-            // 클립보드 API가 지원되지 않는 경우 대체 방법
-            const textArea = document.createElement('textarea');
-            textArea.value = 'gaiogo2@naver.com';
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            setEmailCopied(true);
-            setTimeout(() => setEmailCopied(false), 2000);
-        }
+    const handleEmailClick = () => {
+        navigator.clipboard.writeText('gaiogo2@naver.com');
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 2000);
     };
 
     const handleGithubClick = () => {
