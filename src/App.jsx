@@ -5,6 +5,7 @@ import AboutMe from './pages/AboutMe/AboutMe';
 import Histories from './pages/History/Histories';
 import Skills from './pages/Skill/Skills';
 import Projects from './pages/Project/Projects';
+import Contact from './pages/Contact/Contact';
 import Skeleton from './components/Skeleton/Skeleton';
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
         <section id='D'>  
           <Projects />        
         </section>
+        <footer>
+          <Contact />
+        </footer>
       </main>
     </>
   )
