@@ -8,7 +8,7 @@ function Skeleton({ onComplete }) {
     const [loadingProgress, setLoadingProgress] = useState(0);
     const [showLoading, setShowLoading] = useState(false);
     
-    const fullText = '프론트엔드 개발자\n이강룡입니다.';
+    const fullText = '서비스를 만드는\n 프론트엔드 개발자\n 이강룡 입니다.';
     
     useEffect(() => {
         if (currentStep === 0) {
