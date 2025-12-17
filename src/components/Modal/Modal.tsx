@@ -5,11 +5,31 @@ import FAQ from '../FAQ/FAQ';
 import Zoom from '../Zoom/Zoom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-function Modal({ setModal, title, duration, resultImg, arcImg, faqData, topcolor }) {
-    const { assets: projects } = useAssets('projects');
-    const [zoomImage, setZoomImage] = useState(null);
+interface FAQType {
+    question: string;
+    answer: string;
+}
 
-    const handleImageClick = (imageSrc, altText) => {
+interface ZoomImageType {
+    src: string;
+    alt: string;
+}
+
+interface ModalProps {
+    setModal: () => void;
+    title: string;
+    duration: string;
+    resultImg: string[];
+    arcImg: string;
+    faqData: FAQType[];
+    topcolor: string;
+}
+
+const Modal = ({ setModal, title, duration, resultImg, arcImg, faqData, topcolor }: ModalProps) => {
+    const { assets: projects } = useAssets('projects');
+    const [zoomImage, setZoomImage] = useState<ZoomImageType | null>(null);
+
+    const handleImageClick = (imageSrc: string, altText: string) => {
         setZoomImage({ src: imageSrc, alt: altText });
     };
 
@@ -32,7 +52,7 @@ function Modal({ setModal, title, duration, resultImg, arcImg, faqData, topcolor
                     onClick={(e) => e.stopPropagation()}
                     initial={{ scale: 0.3, rotate: -15, y: 100, opacity: 0, originX: 0.5, originY: 0.5 }}
                     animate={{ scale: 1, rotate: 0, y: 0, opacity: 1 }}
-                    exit={{ scale: 0.3, rotate: 15, y: -100,opacity: 0 }}
+                    exit={{ scale: 0.3, rotate: 15, y: -100, opacity: 0 }}
                     transition={{ type: "spring", stiffness: 300, damping: 25, duration: 0.6 }}
                 >
                     <motion.div 
@@ -159,6 +179,6 @@ function Modal({ setModal, title, duration, resultImg, arcImg, faqData, topcolor
             </motion.article>
         </AnimatePresence>
     );
-}
+};
 
 export default Modal;

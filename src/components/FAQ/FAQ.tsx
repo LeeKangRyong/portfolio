@@ -2,8 +2,13 @@ import './FAQ.css';
 import { useState } from 'react';
 import arrowIcon from '../../assets/toggle.png';
 
-function FAQ({ question, answer }) {
-    const [isOpen, setIsOpen] = useState(false);
+interface FAQProps {
+    question: string;
+    answer: string;
+}
+
+const FAQ = ({ question, answer }: FAQProps) => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const toggleFAQ = () => {
         setIsOpen(!isOpen);
@@ -12,7 +17,7 @@ function FAQ({ question, answer }) {
     return (
         <div className="faqBox">
             <div className="faqQuestion" onClick={toggleFAQ}>
-                <img s
+                <img 
                     className={`faqArrow ${isOpen ? 'open' : ''}`}
                     src={arrowIcon} 
                     alt="toggle arrow"
@@ -24,6 +29,6 @@ function FAQ({ question, answer }) {
             </div>
         </div>
     );
-}
+};
 
 export default FAQ;

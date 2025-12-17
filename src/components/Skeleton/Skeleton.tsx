@@ -2,11 +2,15 @@ import './Skeleton.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-function Skeleton({ onComplete }) {
-    const [currentStep, setCurrentStep] = useState(0);
-    const [typedText, setTypedText] = useState('');
-    const [loadingProgress, setLoadingProgress] = useState(0);
-    const [showLoading, setShowLoading] = useState(false);
+interface SkeletonProps {
+    onComplete?: () => void;
+}
+
+const Skeleton = ({ onComplete }: SkeletonProps) => {
+    const [currentStep, setCurrentStep] = useState<number>(0);
+    const [typedText, setTypedText] = useState<string>('');
+    const [loadingProgress, setLoadingProgress] = useState<number>(0);
+    const [showLoading, setShowLoading] = useState<boolean>(false);
     
     const fullText = '서비스를 만드는\n 프론트엔드 개발자\n 이강룡 입니다.';
     
@@ -28,7 +32,7 @@ function Skeleton({ onComplete }) {
             
             return () => clearInterval(typingTimer);
         }
-    }, [currentStep]);
+    }, [currentStep, fullText]);
     
     useEffect(() => {
         if (currentStep === 1) {
@@ -123,6 +127,6 @@ function Skeleton({ onComplete }) {
             </motion.div>
         </AnimatePresence>
     );
-}
+};
 
 export default Skeleton;

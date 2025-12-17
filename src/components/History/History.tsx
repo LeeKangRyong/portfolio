@@ -1,6 +1,12 @@
 import './History.css';
 
-function History({ title, duration, description }) {
+interface HistoryProps {
+    title: string;
+    duration: string;
+    description: string;
+}
+
+const History = ({ title, duration, description }: HistoryProps) => {
     return (
         <div className="history">
             <div className="titleWrapper">
@@ -15,6 +21,6 @@ function History({ title, duration, description }) {
             </div>
         </div>
     );
-}
+};
 
 export default History;

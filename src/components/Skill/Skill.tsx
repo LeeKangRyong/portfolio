@@ -1,7 +1,13 @@
 import './Skill.css';
 import { motion } from 'framer-motion';
 
-function Skill({ icon, name, description }) {
+interface SkillType {
+    icon: string;
+    name: string;
+    description: string;
+}
+
+function Skill({ icon, name, description }: SkillType) {
     return (
         <motion.article 
             className="skillDetailContainer"

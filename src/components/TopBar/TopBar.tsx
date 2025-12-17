@@ -1,12 +1,12 @@
 import './TopBar.css';
 import { Link } from 'react-scroll';
 import { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 
-function TopBar() {
-    const [showNavBar, setShowNavbar] = useState(true);
-    const hideNavBarTimeoutRef = useRef(null);
-    const { scrollY } = useScroll();
+const TopBar = () => {
+    const [showNavBar, setShowNavbar] = useState<boolean>(true);
+    const hideNavBarTimeoutRef = useRef<number | null>(null);
+    const { scrollY }: { scrollY: MotionValue<number> } = useScroll();
     
     const backgroundColor = useTransform(
         scrollY,
@@ -105,6 +105,6 @@ function TopBar() {
             </motion.header>
         </>
     );
-}
+};
 
 export default TopBar;

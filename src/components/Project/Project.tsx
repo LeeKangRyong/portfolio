@@ -5,7 +5,22 @@ import useModal from '../../hooks/useModal';
 import Modal from '../Modal/Modal';
 import useHover from '../../hooks/useHover';
 
-function Project({ 
+interface ProjectProps {
+    titleImg: string;
+    title: string;
+    description: string;
+    member: string;
+    role: string;
+    duration: string;
+    stacks: string[];
+    githubLink: string;
+    resultImg: string[];
+    arcImg: string;
+    faqData: Array<{ question: string; answer: string }>;
+    topcolor: string;
+}
+
+const Project = ({ 
     titleImg, 
     title, 
     description, 
@@ -18,19 +33,19 @@ function Project({
     arcImg,
     faqData,
     topcolor
-}) {
-    const { modal, setModal } = useModal();
+}: ProjectProps) => {
+    const { modal, handleModal } = useModal();
     const { hover, onHover, notOnHover } = useHover();
 
     const linkToProject = () => {
-        setModal();
+        handleModal();
     };
 
     const linkToGithub = () => {
         window.open(githubLink, '_blank');
     };
 
-    function Detail() {
+    const Detail = () => {
         return (
             <button onClick={linkToProject} className="detail">상세 보기</button>
         );
@@ -71,7 +86,7 @@ function Project({
             </div>
             {modal && (
                 <Modal 
-                    setModal={setModal} 
+                    setModal={handleModal}
                     title={title} 
                     duration={duration}
                     resultImg={resultImg}
