@@ -1,7 +1,12 @@
-
 import { useState } from "react";
 
-const useHover = () => {
+interface UseHoverType {
+    hover: boolean;
+    onHover: () => void;
+    notOnHover: () => void;
+}
+
+const useHover = (): UseHoverType => {
     const [hover, setHover] = useState(false);
 
     const onHover = () => {
@@ -10,9 +15,9 @@ const useHover = () => {
 
     const notOnHover = () => {
         setHover(false);
-    }
+    };
 
-    return [hover, onHover, notOnHover];
+    return { hover, onHover, notOnHover };
 };
 
 export default useHover;

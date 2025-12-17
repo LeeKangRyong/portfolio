@@ -1,4 +1,11 @@
-const skills = [
+export interface SkillType {
+    title: string;
+    names: string[];
+    descriptions: string[];
+    icons: string[];
+}
+
+const skills: SkillType[] = [
     {
         title: 'FE',
         names: [

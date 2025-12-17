@@ -19,8 +19,8 @@ function Project({
     faqData,
     topcolor
 }) {
-    const [modal, setModal] = useModal();
-    const [hover, onHover, notOnHover] = useHover();
+    const { modal, setModal } = useModal();
+    const { hover, onHover, notOnHover } = useHover();
 
     const linkToProject = () => {
         setModal();

@@ -1,4 +1,25 @@
-const projects = [
+interface FAQType {
+    question: string;
+    answer: string;
+}
+
+export interface ProjectType {
+    id: number;
+    titleImg: string;
+    title: string;
+    description: string;
+    member: string;
+    role: string;
+    duration: string;
+    stacks: string[];
+    githubLink: string;
+    resultImg: string[];
+    arcImg: string;
+    topcolor: string;
+    faqData: FAQType[];
+}
+
+const projects: ProjectType[] = [
     {
         "id": 1,
         "titleImg": "project1_portfolio",

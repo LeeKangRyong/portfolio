@@ -1,26 +1,35 @@
 import { useState, useEffect } from 'react';
 
-const useAssets = (assetType) => {
-    const [assets, setAssets] = useState({});
+type AssetType = 'skills' | 'projects';
+
+interface GlobModuleType {
+    default: string;
+}
+
+interface UseAssetsType {
+    assets: Record<string, string>;
+}
+
+const useAssets = (assetType: AssetType): UseAssetsType => {
+    const [assets, setAssets] = useState<Record<string, string>>({});
 
     useEffect(() => {
         const loadAssets = async () => {
-
-            let assetModules = {};
+            let assetModules: Record<string, GlobModuleType> = {};
             
             if (assetType === 'skills') {
-                assetModules = import.meta.glob('/src/assets/skills/*.png', { eager: true });
+                assetModules = import.meta.glob('/src/assets/skills/*.png', { eager: true }) as Record<string, GlobModuleType>;
             } else if (assetType === 'projects') {
-                assetModules = import.meta.glob('/src/assets/projects/**/*.png', { eager: true });
+                assetModules = import.meta.glob('/src/assets/projects/**/*.png', { eager: true }) as Record<string, GlobModuleType>;
             }
 
-            const loadedAssets = {};
+            const loadedAssets: Record<string, string> = {};
 
             Object.entries(assetModules).forEach(([path, module]) => {
                 console.log('Processing path:', path);
                 
                 if (assetType === 'skills') {
-                    const fileName = path.split('/').pop().replace(/\.(png|jpg|jpeg|gif|svg)$/, '');
+                    const fileName = path.split('/').pop()?.replace(/\.(png|jpg|jpeg|gif|svg)$/, '') || '';
                     loadedAssets[fileName] = module.default;
                 } else if (assetType === 'projects') {
                     const pathParts = path.split('/');

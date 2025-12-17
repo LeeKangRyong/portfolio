@@ -1,4 +1,12 @@
-const histories = [
+export interface HistoryType {
+    title: string;
+    duration: string;
+    description: string;
+    direction: 'left' | 'right';
+    delay: number;
+}
+
+const histories: HistoryType[] = [
     {
         title: "숭실대학교",
         duration: "2020.03 ~ 현재",
