@@ -2,8 +2,8 @@ import './Contact.css';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-function Contact() {
-    const [emailCopied, setEmailCopied] = useState(false);
+const Contact = () => {
+    const [emailCopied, setEmailCopied] = useState<boolean>(false);
 
     const handleEmailClick = () => {
         navigator.clipboard.writeText('gaiogo2@naver.com');
@@ -116,6 +116,6 @@ function Contact() {
             </motion.p>
         </motion.article>
     );
-}
+};
 
 export default Contact;

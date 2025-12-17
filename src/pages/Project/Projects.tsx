@@ -4,7 +4,7 @@ import useAssets from '../../hooks/useAssets';
 import { motion } from 'framer-motion';
 import projects from '../../data/projectData';
 
-function Projects() {
+const Projects = () => {
     const { assets: projectImages } = useAssets('projects');
 
     return (
@@ -20,7 +20,7 @@ function Projects() {
             </motion.h1>
             
             <div className="projectsList">
-                {projects.map((project, index) => (
+                {projects.map((project) => (
                     <motion.div
                         key={project.id}
                         initial={{ opacity: 0 }}
@@ -47,6 +47,6 @@ function Projects() {
             </div>
         </article>
     );
-}
+};
 
 export default Projects;

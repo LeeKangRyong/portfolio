@@ -4,11 +4,10 @@ import Skill from '../../components/Skill/Skill';
 import larrow from '../../assets/skills/larrow.png';
 import rarrow from '../../assets/skills/rarrow.png';
 import useAssets from '../../hooks/useAssets';
-
 import skills from '../../data/skillData';
 
-function Skills() {
-    const [currentIndex, setCurrentIndex] = useState(0);
+const Skills = () => {
+    const [currentIndex, setCurrentIndex] = useState<number>(0);
     const { assets: skillIcons } = useAssets('skills');
 
     const goToPrevious = () => {
@@ -70,6 +69,6 @@ function Skills() {
             </div>
         </article>
     );
-}
+};
 
 export default Skills;

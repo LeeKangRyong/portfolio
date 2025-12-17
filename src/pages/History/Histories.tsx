@@ -2,8 +2,8 @@ import './Histories.css';
 import History from '../../components/History/History';
 import { motion } from 'framer-motion';
 import histories from '../../data/historyData';
-function Histories() {
 
+const Histories = () => {
     return (
         <motion.article 
             className="historyContainer"
@@ -52,6 +52,6 @@ function Histories() {
             </div>
         </motion.article>
     );
-}
+};
 
 export default Histories;
