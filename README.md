@@ -8,7 +8,7 @@
 
 ### 기술 스택
 
-React + Vite, HTML, CSS, JavaScript, Framer Motion, Netlify
+React + Vite, HTML, CSS, TypeScript, Framer Motion, Netlify
 
 ### 반응형 디자인
 
