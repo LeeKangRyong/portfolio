@@ -9,7 +9,7 @@
 
 <br>
 
-- 2nd (refactor): 2025.12.17 (1일)
+- 2nd (refactor): 2025.12 (2일 작업)
     - Migrate to TypeScript
     - Update data
     - Fix errors
