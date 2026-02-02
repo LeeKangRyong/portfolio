@@ -1,4 +1,3 @@
-import './Skeleton.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import type { SkeletonProps } from '@/types';
@@ -54,7 +53,7 @@ const Skeleton = ({ onComplete }: SkeletonProps) => {
   return (
     <AnimatePresence>
       <motion.div
-        className="skeletonContainer"
+        className="fixed inset-0 w-screen h-screen bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f] flex flex-col justify-center items-center z-[9999] font-['BMJUA',system-ui,sans-serif]"
         initial={{ opacity: 1 }}
         exit={{
           opacity: 0,
@@ -63,13 +62,13 @@ const Skeleton = ({ onComplete }: SkeletonProps) => {
         }}
       >
         <motion.div
-          className="skeletonContentWrapper"
+          className="flex flex-col justify-center items-center text-center gap-12 max-lg:gap-10 max-md:gap-8 max-md:px-4 max-sm:gap-6 max-sm:px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <motion.h1
-            className="skeletonMainText"
+            className="text-7xl font-bold text-white m-0 leading-tight whitespace-pre-line drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] max-lg:text-6xl max-md:text-4xl max-md:leading-snug max-sm:text-3xl max-sm:leading-normal"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
@@ -84,7 +83,7 @@ const Skeleton = ({ onComplete }: SkeletonProps) => {
                 {line}
                 {currentStep === 0 && index === typedText.split('\n').length - 1 && (
                   <motion.span
-                    className="cursor"
+                    className="text-[#adff2f] font-normal ml-0.5 max-sm:ml-0"
                     animate={{ opacity: [1, 0] }}
                     transition={{ duration: 0.8, repeat: Infinity, repeatType: 'reverse' }}
                   >
@@ -97,13 +96,13 @@ const Skeleton = ({ onComplete }: SkeletonProps) => {
 
           {showLoading && (
             <motion.div
-              className="skeletonProgressWrapper"
+              className="flex flex-col items-center gap-8 min-w-80 max-lg:gap-7 max-lg:min-w-72 max-md:gap-6 max-md:min-w-60 max-sm:gap-5 max-sm:min-w-48"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
               <motion.div
-                className="skeletonProgress"
+                className="text-5xl font-bold text-[#adff2f] drop-shadow-[0_0_15px_rgba(173,255,47,0.5)] max-lg:text-4xl max-md:text-3xl max-sm:text-2xl"
                 key={loadingProgress}
                 initial={{ scale: 1.2, opacity: 0.7 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -112,9 +111,9 @@ const Skeleton = ({ onComplete }: SkeletonProps) => {
                 {loadingProgress}%
               </motion.div>
 
-              <div className="skeletonProgressBarWrapper">
+              <div className="w-full h-2 bg-white/10 rounded-2xl overflow-hidden shadow-inner max-lg:h-1.5 max-md:h-1 max-sm:h-1">
                 <motion.div
-                  className="skeletonProgressBar"
+                  className="h-full bg-gradient-to-r from-[#adff2f] via-[#7ed321] to-[#adff2f] rounded-2xl shadow-[0_0_10px_rgba(173,255,47,0.6)] relative after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/30 after:to-transparent after:animate-[shimmer_1.5s_infinite]"
                   initial={{ width: 0 }}
                   animate={{ width: `${loadingProgress}%` }}
                   transition={{ duration: 0.1, ease: 'easeOut' }}

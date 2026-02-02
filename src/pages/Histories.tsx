@@ -1,19 +1,18 @@
-import './Histories.css';
-import History from '@/components/History/History';
+import History from '@/components/History';
 import { motion } from 'framer-motion';
 import histories from '@/data/historyData';
 
 const Histories = () => {
   return (
     <motion.article
-      className="historyContainer"
+      className="w-full max-w-[75rem] mx-auto px-8 box-border max-lg:px-6 max-md:px-4 max-sm:px-2"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ amount: 0.2 }}
     >
       <motion.h1
-        className="historyTitle"
+        className="text-7xl font-bold mb-12 text-center text-white mt-0 ml-0 max-lg:text-5xl max-md:text-4xl max-md:mb-8 max-sm:text-3xl max-sm:mb-6"
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -22,7 +21,7 @@ const Histories = () => {
         History
       </motion.h1>
 
-      <div className="historyWrapper">
+      <div className="w-full flex flex-col gap-0">
         {histories.map((history) => (
           <motion.div
             key={history.title}
