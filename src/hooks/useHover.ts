@@ -1,23 +1,18 @@
-import { useState } from "react";
+import { useState, useCallback } from 'react';
+import type { UseHoverReturn } from '@/types';
 
-interface UseHoverType {
-    hover: boolean;
-    onHover: () => void;
-    notOnHover: () => void;
-}
+const useHover = (): UseHoverReturn => {
+  const [isHovered, setIsHovered] = useState(false);
 
-const useHover = (): UseHoverType => {
-    const [hover, setHover] = useState(false);
+  const onMouseEnter = useCallback(() => {
+    setIsHovered(true);
+  }, []);
 
-    const onHover = () => {
-        setHover(true);
-    };
+  const onMouseLeave = useCallback(() => {
+    setIsHovered(false);
+  }, []);
 
-    const notOnHover = () => {
-        setHover(false);
-    };
-
-    return { hover, onHover, notOnHover };
+  return { isHovered, onMouseEnter, onMouseLeave };
 };
 
 export default useHover;

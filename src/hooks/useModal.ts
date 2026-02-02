@@ -1,19 +1,22 @@
+import { useState, useCallback } from 'react';
+import type { UseModalReturn } from '@/types';
 
-import { useState } from "react";
+const useModal = (): UseModalReturn => {
+  const [isOpen, setIsOpen] = useState(false);
 
-interface UseModalType {
-    modal: boolean;
-    handleModal: () => void;
-}
+  const open = useCallback(() => {
+    setIsOpen(true);
+  }, []);
 
-const useModal = (): UseModalType => {
-    const [modal, setModal] = useState(false);
+  const close = useCallback(() => {
+    setIsOpen(false);
+  }, []);
 
-    const handleModal = () => {
-        setModal(!modal);
-    };
+  const toggle = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
 
-    return { modal, handleModal };
+  return { isOpen, open, close, toggle };
 };
 
 export default useModal;

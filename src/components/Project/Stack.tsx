@@ -1,15 +1,12 @@
 import './Stack.css';
-
-interface StackProps {
-    stack: string;
-}
+import type { StackProps } from '@/types';
 
 const Stack = ({ stack }: StackProps) => {
-    return (
-        <div className="stackWrapper">
-            <p className="stackName">{stack}</p>
-        </div>
-    );
+  return (
+    <div className="stackWrapper">
+      <p className="stackName">{stack}</p>
+    </div>
+  );
 };
 
 export default Stack;
