@@ -12,7 +12,7 @@ const useAssets = (assetType: AssetType): UseAssetsReturn => {
     let assetModules: Record<string, GlobModule> = {};
 
     if (assetType === 'skills') {
-      assetModules = import.meta.glob('/src/assets/skills/*.png', {
+      assetModules = import.meta.glob('/src/assets/skills/*.svg', {
         eager: true,
       }) as Record<string, GlobModule>;
     } else if (assetType === 'projects') {

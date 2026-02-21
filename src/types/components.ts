@@ -30,7 +30,7 @@ export interface FAQProps {
   answer: string;
 }
 
-export interface SkillProps extends SkillItem {}
+export type SkillProps = SkillItem;
 
 export interface HistoryProps {
   title: string;

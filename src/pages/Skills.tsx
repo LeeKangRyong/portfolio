@@ -1,88 +1,151 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useMediaQuery } from 'react-responsive';
 import Skill from '@/components/Skill';
 import larrow from '@/assets/skills/larrow.png';
 import rarrow from '@/assets/skills/rarrow.png';
 import useAssets from '@/hooks/useAssets';
 import skills from '@/data/skillData';
 
+const gridVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06 } },
+  exit: { transition: { staggerChildren: 0.04, staggerDirection: -1 as const } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24, scale: 0.85 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] as const },
+  },
+  exit: { opacity: 0, y: -16, scale: 0.9, transition: { duration: 0.2 } },
+};
+
 const Skills = () => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [activeTitle, setActiveTitle] = useState<string>(skills[0]?.title ?? '');
   const { assets: skillIcons } = useAssets('skills');
+  const isMobile = useMediaQuery({ maxWidth: 639 });
+
+  const activeIndex = skills.findIndex((cat) => cat.title === activeTitle);
+  const activeCategory = skills[activeIndex];
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => prev - 1);
+    const prev = skills[activeIndex - 1];
+    if (prev) setActiveTitle(prev.title);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => prev + 1);
+    const next = skills[activeIndex + 1];
+    if (next) setActiveTitle(next.title);
   };
 
-  const isFirstPage = currentIndex === 0;
-  const isLastPage = currentIndex === skills.length - 1;
-
   return (
-    <article className="w-full max-w-[75rem] mx-auto px-8 box-border max-lg:px-6 max-md:px-4 max-sm:px-2">
-      <h1 className="text-7xl font-bold mb-12 text-center text-white mt-0 max-lg:text-5xl max-md:text-4xl max-md:mb-8 max-sm:text-3xl max-sm:mb-6">
+    <motion.article
+      className="w-full max-w-[75rem] mx-auto px-8 box-border max-lg:px-6 max-md:px-4 max-sm:px-2"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ amount: 0.2 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
+      <motion.h1
+        className="text-7xl font-bold mb-12 text-center text-white mt-0 max-lg:text-5xl max-md:text-4xl max-md:mb-8 max-sm:text-3xl max-sm:mb-6"
+        initial={{ y: -50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ amount: 0.2 }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+      >
         Skills & Tools
-      </h1>
-      <p className="text-base text-center mb-5">
-        마우스를 올려서 나머지 기술들도 확인해보세요!
-      </p>
+      </motion.h1>
 
-      <div className="flex items-center justify-center w-full mb-8">
-        <div className="relative overflow-hidden rounded-3xl bg-gray-400/50 border border-white/20 min-h-[28.125rem] w-[70%] h-[40vh] group hover:scale-105 transition-all duration-300 max-lg:min-h-[32rem] max-lg:w-[85%] max-md:min-h-[42rem] max-md:w-[95%] max-md:h-auto max-sm:min-h-[31.25rem] max-sm:w-[95%]">
-          {!isFirstPage && (
-            <img
-              src={larrow}
-              alt="leftArrow"
-              className="absolute top-1/2 left-5 -translate-y-1/2 cursor-pointer transition-all duration-400 z-10 opacity-0 invisible w-10 h-10 object-contain group-hover:opacity-100 group-hover:visible hover:scale-110 max-lg:w-9 max-lg:h-9 max-lg:left-4 max-md:w-8 max-md:h-8 max-md:left-2.5 max-sm:w-6 max-sm:h-6 max-sm:left-2"
+      <div className="flex flex-col items-center gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.2 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.4 }}
+        >
+        {isMobile ? (
+          <div className="flex items-center gap-4">
+            <button
               onClick={goToPrevious}
-              aria-label="Previous skill category"
-            />
-          )}
-
-          {!isLastPage && (
-            <img
-              src={rarrow}
-              alt="rightArrow"
-              className="absolute top-1/2 right-5 -translate-y-1/2 cursor-pointer transition-all duration-400 z-10 opacity-0 invisible w-10 h-10 object-contain group-hover:opacity-100 group-hover:visible hover:scale-110 max-lg:w-9 max-lg:h-9 max-lg:right-4 max-md:w-8 max-md:h-8 max-md:right-2.5 max-sm:w-6 max-sm:h-6 max-sm:right-2"
+              disabled={activeIndex === 0}
+              className="p-1 disabled:opacity-20 transition-opacity"
+              aria-label="Previous category"
+            >
+              <img src={larrow} alt="previous" className="w-6 h-6 object-contain opacity-60 hover:opacity-100 transition-opacity" />
+            </button>
+            <span className="text-white font-bold text-lg w-10 text-center">{activeTitle}</span>
+            <button
               onClick={goToNext}
-              aria-label="Next skill category"
-            />
-          )}
-
-          <div
-            className="flex transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] h-full w-full"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
-            {skills.map((category) => (
-              <div
-                key={category.title}
-                className="w-full h-full flex flex-col items-center justify-start shrink-0 py-2 px-6 pb-6 box-border max-lg:px-4 max-md:py-2 max-md:px-2 max-md:pb-6 max-sm:p-4"
+              disabled={activeIndex === skills.length - 1}
+              className="p-1 disabled:opacity-20 transition-opacity"
+              aria-label="Next category"
+            >
+              <img src={rarrow} alt="next" className="w-6 h-6 object-contain opacity-60 hover:opacity-100 transition-opacity" />
+            </button>
+          </div>
+        ) : (
+          <div className="flex bg-white/10 rounded-full p-1 gap-1">
+            {skills.map((cat) => (
+              <button
+                key={cat.title}
+                onClick={() => setActiveTitle(cat.title)}
+                className="relative px-6 py-2 rounded-full cursor-pointer"
+                aria-pressed={activeTitle === cat.title}
               >
-                <h2 className="text-4xl font-bold text-white mb-1.5 text-center max-lg:text-3xl max-lg:mb-2 max-md:text-3xl max-md:mb-2">
-                  {category.title}
-                </h2>
-                <div className="grid grid-cols-2 grid-rows-4 gap-x-6 gap-y-4 w-full max-w-[37.5rem] mx-auto justify-items-center items-center flex-1 content-center auto-cols-auto [grid-auto-flow:column] max-lg:gap-x-7 max-lg:gap-y-5 max-lg:max-w-[35rem] max-md:grid-cols-1 max-md:grid-rows-[repeat(8,auto)] max-md:[grid-auto-flow:row] max-md:gap-4 max-md:max-w-80 max-sm:gap-3 max-sm:max-w-[17.5rem]">
-                  {category.items.map((item) => {
-                    const iconSrc = skillIcons[item.icon];
-                    if (!iconSrc) return null;
-                    return (
-                      <Skill
-                        key={item.name}
-                        name={item.name}
-                        description={item.description}
-                        icon={iconSrc}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
+                {activeTitle === cat.title && (
+                  <motion.div
+                    layoutId="activePill"
+                    className="absolute inset-0 bg-white rounded-full"
+                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <span
+                  className={`relative z-10 font-bold text-sm transition-colors ${
+                    activeTitle === cat.title ? 'text-black' : 'text-white/60'
+                  }`}
+                >
+                  {cat.title}
+                </span>
+              </button>
             ))}
           </div>
-        </div>
+        )}
+        </motion.div>
+
+        <motion.div
+          className="bg-white/5 rounded-3xl p-8 w-full max-w-3xl min-h-64 flex items-center justify-center max-sm:p-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.2 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTitle}
+              className="flex flex-wrap justify-center gap-4"
+              variants={gridVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              {(activeCategory?.items ?? []).map((item) => {
+                const iconSrc = skillIcons[item.icon];
+                if (!iconSrc) return null;
+                return (
+                  <motion.div key={item.name} variants={itemVariants}>
+                    <Skill name={item.name} icon={iconSrc} />
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
       </div>
-    </article>
+    </motion.article>
   );
 };
 

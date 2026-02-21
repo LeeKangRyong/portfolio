@@ -1,6 +1,5 @@
 export interface SkillItem {
   name: string;
-  description: string;
   icon: string;
 }
 
