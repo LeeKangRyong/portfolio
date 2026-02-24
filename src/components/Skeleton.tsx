@@ -74,30 +74,20 @@ const Skeleton = ({ onComplete }: SkeletonProps) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            {typedText.split('\n').map((line, index) => (
-              <motion.div
-                key={line || index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: index * 0.3 }}
+            {typedText}
+            {currentStep === 0 && (
+              <motion.span
+                className="text-[#adff2f] font-normal ml-0.5 max-sm:ml-0"
+                animate={{ opacity: [1, 0] }}
+                transition={{
+                  duration: 0.5,
+                  repeat: Infinity,
+                  repeatType: 'reverse',
+                }}
               >
-                {line}
-                {currentStep === 0 &&
-                  index === typedText.split('\n').length - 1 && (
-                    <motion.span
-                      className="text-[#adff2f] font-normal ml-0.5 max-sm:ml-0"
-                      animate={{ opacity: [1, 0] }}
-                      transition={{
-                        duration: 0.8,
-                        repeat: Infinity,
-                        repeatType: 'reverse',
-                      }}
-                    >
-                      |
-                    </motion.span>
-                  )}
-              </motion.div>
-            ))}
+                |
+              </motion.span>
+            )}
           </motion.h1>
 
           {showLoading && (
