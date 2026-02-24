@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Pretendard 폰트 - 9종 */
 @font-face {
   font-family: "Pretendard";
   src: url("./assets/fonts/Pretendard-Thin.ttf") format("truetype");
@@ -70,7 +69,13 @@ body {
   min-height: 100vh;
   font-family: 'Pretendard', sans-serif;
   @apply bg-black text-white;
+  -ms-overflow-style: none;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 
 a {
   text-decoration: inherit;
@@ -80,4 +85,15 @@ a {
 button {
   font-family: inherit;
   cursor: pointer;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, #d1d5db 0%, #e5e7eb 50%, #d1d5db 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
 }
