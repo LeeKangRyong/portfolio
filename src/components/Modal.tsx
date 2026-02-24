@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useAssets from '@/hooks/useAssets';
 import FAQ from '@/components/FAQ';
 import Zoom from '@/components/Zoom';
@@ -23,6 +23,13 @@ const Modal = ({
 }: ModalProps) => {
   const { assets: projects } = useAssets('projects');
   const [zoomImage, setZoomImage] = useState<ZoomImage | null>(null);
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   const gridClass =
     type === 'app'
