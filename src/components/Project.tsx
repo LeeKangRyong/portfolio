@@ -34,7 +34,7 @@ const Project = ({
         <ImageSkeleton
           src={titleImg}
           alt={`${title} project`}
-          className="shrink-0 w-[38rem] h-[26rem] rounded-3xl transition-opacity duration-300 group-hover:opacity-70 max-lg:w-[28rem] max-lg:h-[22rem] max-md:w-[26rem] max-md:h-72 max-sm:w-[22rem] max-sm:h-64"
+          className="shrink-0 w-152 h-104 rounded-3xl transition-opacity duration-300 group-hover:opacity-70 max-lg:w-md max-lg:h-88 max-md:w-104 max-md:h-72 max-sm:w-88 max-sm:h-64"
         />
         <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl">
           {demo && (
@@ -53,7 +53,7 @@ const Project = ({
           </button>
         </div>
       </div>
-      <div className="flex-1 flex flex-col justify-start gap-6 p-0 m-0 min-w-0 max-lg:gap-5 max-md:w-full max-md:max-w-[26rem] max-md:gap-4 max-sm:max-w-[22rem] max-sm:gap-3">
+      <div className="flex-1 flex flex-col justify-start gap-6 p-0 m-0 min-w-0 max-lg:gap-5 max-md:w-full max-md:max-w-104 max-md:gap-4 max-sm:max-w-88 max-sm:gap-3">
         <div className="flex justify-between items-start p-0 m-0">
           <div className="flex-1 m-0 p-0 min-w-0">
             <p className="text-3xl font-bold text-white m-0 mb-2 max-lg:text-2xl max-md:text-xl max-sm:text-lg">

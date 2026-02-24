@@ -54,7 +54,7 @@ const Skeleton = ({ onComplete }: SkeletonProps) => {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 w-screen h-screen bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f] flex flex-col justify-center items-center z-[9999] font-['BMJUA',system-ui,sans-serif]"
+        className="fixed inset-0 w-screen h-screen bg-linear-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f] flex flex-col justify-center items-center z-9999 font-['BMJUA',system-ui,sans-serif]"
         initial={{ opacity: 1 }}
         exit={{
           opacity: 0,
@@ -119,7 +119,7 @@ const Skeleton = ({ onComplete }: SkeletonProps) => {
 
               <div className="w-full h-2 bg-white/10 rounded-2xl overflow-hidden shadow-inner max-lg:h-1.5 max-md:h-1 max-sm:h-1">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-[#adff2f] via-[#7ed321] to-[#adff2f] rounded-2xl shadow-[0_0_10px_rgba(173,255,47,0.6)] relative after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/30 after:to-transparent after:animate-[shimmer_1.5s_infinite]"
+                  className="h-full bg-linear-to-r from-[#adff2f] via-[#7ed321] to-[#adff2f] rounded-2xl shadow-[0_0_10px_rgba(173,255,47,0.6)] relative after:content-[''] after:absolute after:inset-0 after:bg-linear-to-r after:from-transparent after:via-white/30 after:to-transparent after:animate-[shimmer_1.5s_infinite]"
                   initial={{ width: 0 }}
                   animate={{ width: `${loadingProgress}%` }}
                   transition={{ duration: 0.1, ease: 'easeOut' }}

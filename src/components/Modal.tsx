@@ -47,7 +47,7 @@ const Modal = ({
   return (
     <AnimatePresence>
       <motion.article
-        className="fixed inset-0 bg-black/50 flex justify-center items-center z-[1000]"
+        className="fixed inset-0 bg-black/50 flex justify-center items-center z-1000"
         onClick={onClose}
         initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
         animate={{ opacity: 1, backdropFilter: 'blur(10px)' }}
@@ -55,7 +55,7 @@ const Modal = ({
         transition={{ duration: 0.3 }}
       >
         <motion.div
-          className="bg-white rounded-lg shadow-xl max-w-[60rem] w-[90%] max-h-[90vh] relative box-border overflow-y-auto overflow-x-hidden flex flex-col scrollbar-hide max-lg:rounded-md max-lg:max-w-[40rem] max-lg:max-h-[85vh] max-md:rounded max-md:max-w-[30rem] max-md:w-[95%] max-md:max-h-[85vh] max-sm:rounded-sm max-sm:max-w-[20rem] max-sm:w-[95%] max-sm:max-h-[80vh]"
+          className="bg-white rounded-lg shadow-xl max-w-240 w-[90%] max-h-[90vh] relative box-border overflow-y-auto overflow-x-hidden flex flex-col scrollbar-hide max-lg:rounded-md max-lg:max-w-160 max-lg:max-h-[85vh] max-md:rounded max-md:max-w-120 max-md:w-[95%] max-md:max-h-[85vh] max-sm:rounded-sm max-sm:max-w-[20rem] max-sm:w-[95%] max-sm:max-h-[80vh]"
           onClick={(e) => e.stopPropagation()}
           initial={{
             scale: 0.3,
@@ -75,7 +75,7 @@ const Modal = ({
           }}
         >
           <motion.div
-            className="h-[20vh] w-full flex flex-col justify-center items-center z-[200] rounded-t-lg py-4 max-lg:rounded-t-md max-md:rounded-t max-sm:rounded-t-sm"
+            className="h-[20vh] w-full flex flex-col justify-center items-center z-200 rounded-t-lg py-4 max-lg:rounded-t-md max-md:rounded-t max-sm:rounded-t-sm"
             style={{ backgroundColor: headerColor }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ const Modal = ({
                     <ImageSkeleton
                       src={imgSrc}
                       alt={`project result ${index + 1}`}
-                      className={`${type === 'app' ? 'aspect-[9/16] w-full' : 'aspect-video w-full'} transition-opacity duration-300 group-hover:opacity-90`}
+                      className={`${type === 'app' ? 'aspect-9/16 w-full' : 'aspect-video w-full'} transition-opacity duration-300 group-hover:opacity-90`}
                       objectFit="contain"
                     />
                     {imgSrc && (
@@ -170,7 +170,7 @@ const Modal = ({
               transition={{ delay: 0.9, duration: 0.5 }}
             >
               <motion.div
-                className="relative inline-block rounded-lg overflow-hidden cursor-pointer max-w-[600px] w-full group"
+                className="relative inline-block rounded-lg overflow-hidden cursor-pointer max-w-150 w-full group"
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 1, duration: 0.4 }}
