@@ -3,8 +3,8 @@ import type { Project } from '@/types';
 const projects: Project[] = [
   {
     id: 1,
-    titleImg: 'zzan_intro',
-    title: '짠, ZZAN',
+    titleImg: 'zzan_zzan_intro',
+    title: 'ZZAN',
     description: '전통주 경험 공유 SNS',
     member: 'FE (1), BE (1), Design (1), PM (1)',
     role: 'FE',
@@ -20,7 +20,7 @@ const projects: Project[] = [
     ],
     github: 'https://github.com/zzan-app/zzan-fe-app',
     type: 'app',
-    summary: ['zzan_login', 'zzan_map', 'zzan_post', 'zzan_feed'],
+    summary: ['zzan_zzan_map', 'zzan_zzan_chat', 'zzan_zzan_feed', 'zzan_zzan_alcohol'],
     architecture: 'zzan_architecture',
     headerColor: '#FFD800',
     faq: [
@@ -37,10 +37,11 @@ const projects: Project[] = [
         answer: '현재는 One Store에만 배포돼있지만, 기능 확장 및 iOS 개발 후 Google Play 및 App Store에도 2026.03 중순까지 배포할 계획입니다. 또한, 사용자 피드백 기반 서비스 개선도 수행할 게획입니다.',
       },
     ],
+    demo: 'https://m.onestore.co.kr/v2/ko-kr/app/0001003973',
   },
   {
     id: 2,
-    titleImg: 'teamworks_intro',
+    titleImg: 'teamworks_teamworks_intro',
     title: 'TeamWorks',
     description: '협업 시 발생하는 무임승차 문제를 데이터 기반으로 해결하는 공정 협업 관리 플랫폼',
     member: 'FE (1), BE (1), Design (1), PM (1)',
@@ -56,7 +57,7 @@ const projects: Project[] = [
     ],
     github: 'https://github.com/LeeKangRyong/teamworks-fe',
     type: 'web',
-    summary: ['teamworks_dashboard', 'teamworks_participation', 'teamworks_chat', 'teamworks_assignment'],
+    summary: ['teamworks_teamworks_dashboard', 'teamworks_teamworks_list', 'teamworks_teamworks_participation', 'teamworks_teamworks_chat'],
     architecture: 'teamworks_architecture',
     headerColor: '#C3D6FE',
     faq: [
@@ -81,15 +82,16 @@ const projects: Project[] = [
         answer: '네, 프로젝트 도중 백엔드 개발자가 중간에 이탈하여 마감일 이슈로 인해 빠른 JavaScript 개발로 완성하였습니다. 기능 구현 또는 개선과 동시에 TypeScript로 migration 작업을 할 계획입니다.'
       }
     ],
+    demo: 'https://teamworks-space.site',
   },
   {
     id: 3,
-    titleImg: 'portfolio_intro',
+    titleImg: 'portfolio_portfolio_intro',
     title: '포트폴리오 웹사이트',
     description: '개인 포트폴리오 웹사이트 (2026.ver)',
     member: '전체 (1)',
     role: '전체',
-    duration: '2026.02',
+    duration: '2025.08, 2026.02 (Renewal)',
     stack: [
       { name: 'React', icon: 'react' },
       { name: 'TypeScript', icon: 'typescript' },
@@ -100,7 +102,7 @@ const projects: Project[] = [
     ],
     github: 'https://github.com/LeeKangRyong/portfolio',
     type: 'web',
-    summary: ['portfolio_skeleton', 'portoflio_history', 'portfolio_projects', 'portofolio_modal'],
+    summary: ['portfolio_portfolio_skeleton', 'portfolio_portoflio_history', 'portfolio_portfolio_projects', 'portfolio_portofolio_modal'],
     architecture: 'portfolio_architecture',
     headerColor: '#252c26',
     faq: [
@@ -119,10 +121,11 @@ const projects: Project[] = [
         answer: '현대 디자인에 맞게 계속해서 디자인을 수정하고 데이터를 업데이트할 계획입니다. 또한, SSR을 도입하여 SEO 최적화를 통해 외부에 저를 노출시킬 계획입니다.'
       },
     ],
+    demo: 'https://portfolio-krlee.netlify.app'
   },
   {
     id: 4,
-    titleImg: 'kongkong_portfolio',
+    titleImg: 'kong_kong_intro',
     title: '당신의 AI 심장비서, 콩콩',
     description: 'RAG 기반 AI Agent 콩콩이를 탑재한 진단, 질의응답 및 병원 추천 종합 헬스케어 앱',
     member: 'FE/BE (1), Design (1), AI (3)',
@@ -142,7 +145,7 @@ const projects: Project[] = [
     ],
     github: 'https://github.com/prome-individual',
     type: 'app',
-    summary: ['kongkong_login', 'kongkong_chat', 'kongkong_diagnose', 'kongkong_map'],
+    summary: ['kong_kong_login', 'kong_kong_main', 'kong_kong_chat', 'kong_kong_diagnose'],
     architecture: 'kongkong_architecture',
     headerColor: '#DC2626',
     faq: [
@@ -175,7 +178,7 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    titleImg: 'encapmomnets_intro',
+    titleImg: 'encapmoments_encapmomnets_intro',
     title: 'EncapMoments',
     description: 'AI 미션 기반 추억을 만들고 저장하는 가족 공유 앱',
     member: 'FE/Design/PM (1), BE (2)',
@@ -191,7 +194,7 @@ const projects: Project[] = [
     ],
     github: 'https://github.com/LeeKangRyong/encapmoments-fe',
     type: 'app',
-    summary: ['encapmoments_main', 'encapmoments_mission', 'encapmoments_profile', 'encapmoments_post'],
+    summary: ['encapmoments_encapmoments_main', 'encapmoments_encapmoments_mission', 'encapmoments_encapmoments_album', 'encapmoments_encapmoments_profile'],
     architecture: 'encapmoments_architecture',
     headerColor: '#AAAB52',
     faq: [
