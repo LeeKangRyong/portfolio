@@ -94,7 +94,11 @@ const Project = ({
           </p>
           <div className="grid grid-cols-4 gap-2.5 w-full p-0 box-border max-md:grid-cols-4 max-sm:grid-cols-3 max-sm:gap-1.5">
             {stack.map((item) => (
-              <Stack key={item.name} name={item.name} icon={skillIcons[item.icon] ?? ''} />
+              <Stack
+                key={item.name}
+                name={item.name}
+                icon={skillIcons[item.icon] ?? ''}
+              />
             ))}
           </div>
         </div>

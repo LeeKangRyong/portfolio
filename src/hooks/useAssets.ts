@@ -25,12 +25,19 @@ const useAssets = (assetType: AssetType): UseAssetsReturn => {
 
     Object.entries(assetModules).forEach(([path, module]) => {
       if (assetType === 'skills') {
-        const fileName = path.split('/').pop()?.replace(/\.(png|jpg|jpeg|gif|svg)$/, '') ?? '';
+        const fileName =
+          path
+            .split('/')
+            .pop()
+            ?.replace(/\.(png|jpg|jpeg|gif|svg)$/, '') ?? '';
         loadedAssets[fileName] = module.default;
       } else if (assetType === 'projects') {
         const pathParts = path.split('/');
         const folderName = pathParts[pathParts.length - 2];
-        const fileName = pathParts[pathParts.length - 1]?.replace(/\.(png|jpg|jpeg|gif|svg|webp)$/, '');
+        const fileName = pathParts[pathParts.length - 1]?.replace(
+          /\.(png|jpg|jpeg|gif|svg|webp)$/,
+          '',
+        );
         if (folderName && fileName) {
           const key = `${folderName}_${fileName}`;
           loadedAssets[key] = module.default;

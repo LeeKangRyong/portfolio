@@ -10,7 +10,7 @@ const TopBar = () => {
   const backgroundColor = useTransform(
     scrollY,
     [0, 50],
-    ['rgba(128, 128, 128, 0.6)', 'rgba(128, 128, 128, 0.9)']
+    ['rgba(128, 128, 128, 0.6)', 'rgba(128, 128, 128, 0.9)'],
   );
 
   useEffect(() => {
@@ -71,7 +71,11 @@ const TopBar = () => {
           <Link to="A" smooth={true} duration={500}>
             <motion.span
               className="mx-3 py-2 px-3 rounded-lg transition-all duration-200 text-white font-semibold text-2xl cursor-pointer max-lg:text-xl max-lg:mx-2 max-md:text-sm max-md:mx-1 max-md:py-1 max-md:px-1.5 max-sm:text-xs max-sm:mx-0.5 max-sm:py-0.5 max-sm:px-1"
-              whileHover={{ scale: 1.1, color: '#adff2f', transition: { duration: 0.2 } }}
+              whileHover={{
+                scale: 1.1,
+                color: '#adff2f',
+                transition: { duration: 0.2 },
+              }}
               whileTap={{ scale: 0.95 }}
             >
               About me
@@ -80,7 +84,11 @@ const TopBar = () => {
           <Link to="B" smooth={true} duration={500}>
             <motion.span
               className="mx-3 py-2 px-3 rounded-lg transition-all duration-200 text-white font-semibold text-2xl cursor-pointer max-lg:text-xl max-lg:mx-2 max-md:text-sm max-md:mx-1 max-md:py-1 max-md:px-1.5 max-sm:text-xs max-sm:mx-0.5 max-sm:py-0.5 max-sm:px-1"
-              whileHover={{ scale: 1.1, color: '#adff2f', transition: { duration: 0.2 } }}
+              whileHover={{
+                scale: 1.1,
+                color: '#adff2f',
+                transition: { duration: 0.2 },
+              }}
               whileTap={{ scale: 0.95 }}
             >
               History
@@ -89,7 +97,11 @@ const TopBar = () => {
           <Link to="C" smooth={true} duration={500}>
             <motion.span
               className="mx-3 py-2 px-3 rounded-lg transition-all duration-200 text-white font-semibold text-2xl cursor-pointer max-lg:text-xl max-lg:mx-2 max-md:text-sm max-md:mx-1 max-md:py-1 max-md:px-1.5 max-sm:text-xs max-sm:mx-0.5 max-sm:py-0.5 max-sm:px-1"
-              whileHover={{ scale: 1.1, color: '#adff2f', transition: { duration: 0.2 } }}
+              whileHover={{
+                scale: 1.1,
+                color: '#adff2f',
+                transition: { duration: 0.2 },
+              }}
               whileTap={{ scale: 0.95 }}
             >
               Skills & Tools
@@ -98,7 +110,11 @@ const TopBar = () => {
           <Link to="D" smooth={true} duration={500}>
             <motion.span
               className="mx-3 py-2 px-3 rounded-lg transition-all duration-200 text-white font-semibold text-2xl cursor-pointer max-lg:text-xl max-lg:mx-2 max-md:text-sm max-md:mx-1 max-md:py-1 max-md:px-1.5 max-sm:text-xs max-sm:mx-0.5 max-sm:py-0.5 max-sm:px-1"
-              whileHover={{ scale: 1.1, color: '#adff2f', transition: { duration: 0.2 } }}
+              whileHover={{
+                scale: 1.1,
+                color: '#adff2f',
+                transition: { duration: 0.2 },
+              }}
               whileTap={{ scale: 0.95 }}
             >
               Projects

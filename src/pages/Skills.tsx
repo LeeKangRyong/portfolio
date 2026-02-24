@@ -10,7 +10,9 @@ import skills from '@/data/skillData';
 const gridVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.06 } },
-  exit: { transition: { staggerChildren: 0.04, staggerDirection: -1 as const } },
+  exit: {
+    transition: { staggerChildren: 0.04, staggerDirection: -1 as const },
+  },
 };
 
 const itemVariants = {
@@ -25,7 +27,9 @@ const itemVariants = {
 };
 
 const Skills = () => {
-  const [activeTitle, setActiveTitle] = useState<string>(skills[0]?.title ?? '');
+  const [activeTitle, setActiveTitle] = useState<string>(
+    skills[0]?.title ?? '',
+  );
   const { assets: skillIcons } = useAssets('skills');
   const isMobile = useMediaQuery({ maxWidth: 639 });
 
@@ -67,53 +71,67 @@ const Skills = () => {
           viewport={{ amount: 0.2 }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.4 }}
         >
-        {isMobile ? (
-          <div className="flex items-center gap-4">
-            <button
-              onClick={goToPrevious}
-              disabled={activeIndex === 0}
-              className="p-1 disabled:opacity-20 transition-opacity"
-              aria-label="Previous category"
-            >
-              <img src={larrow} alt="previous" className="w-6 h-6 object-contain opacity-60 hover:opacity-100 transition-opacity" />
-            </button>
-            <span className="text-white font-bold text-lg w-10 text-center">{activeTitle}</span>
-            <button
-              onClick={goToNext}
-              disabled={activeIndex === skills.length - 1}
-              className="p-1 disabled:opacity-20 transition-opacity"
-              aria-label="Next category"
-            >
-              <img src={rarrow} alt="next" className="w-6 h-6 object-contain opacity-60 hover:opacity-100 transition-opacity" />
-            </button>
-          </div>
-        ) : (
-          <div className="flex bg-white/10 rounded-full p-1 gap-1">
-            {skills.map((cat) => (
+          {isMobile ? (
+            <div className="flex items-center gap-4">
               <button
-                key={cat.title}
-                onClick={() => setActiveTitle(cat.title)}
-                className="relative px-6 py-2 rounded-full cursor-pointer"
-                aria-pressed={activeTitle === cat.title}
+                onClick={goToPrevious}
+                disabled={activeIndex === 0}
+                className="p-1 disabled:opacity-20 transition-opacity"
+                aria-label="Previous category"
               >
-                {activeTitle === cat.title && (
-                  <motion.div
-                    layoutId="activePill"
-                    className="absolute inset-0 bg-white rounded-full"
-                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <span
-                  className={`relative z-10 font-bold text-sm transition-colors ${
-                    activeTitle === cat.title ? 'text-black' : 'text-white/60'
-                  }`}
-                >
-                  {cat.title}
-                </span>
+                <img
+                  src={larrow}
+                  alt="previous"
+                  className="w-6 h-6 object-contain opacity-60 hover:opacity-100 transition-opacity"
+                />
               </button>
-            ))}
-          </div>
-        )}
+              <span className="text-white font-bold text-lg w-10 text-center">
+                {activeTitle}
+              </span>
+              <button
+                onClick={goToNext}
+                disabled={activeIndex === skills.length - 1}
+                className="p-1 disabled:opacity-20 transition-opacity"
+                aria-label="Next category"
+              >
+                <img
+                  src={rarrow}
+                  alt="next"
+                  className="w-6 h-6 object-contain opacity-60 hover:opacity-100 transition-opacity"
+                />
+              </button>
+            </div>
+          ) : (
+            <div className="flex bg-white/10 rounded-full p-1 gap-1">
+              {skills.map((cat) => (
+                <button
+                  key={cat.title}
+                  onClick={() => setActiveTitle(cat.title)}
+                  className="relative px-6 py-2 rounded-full cursor-pointer"
+                  aria-pressed={activeTitle === cat.title}
+                >
+                  {activeTitle === cat.title && (
+                    <motion.div
+                      layoutId="activePill"
+                      className="absolute inset-0 bg-white rounded-full"
+                      transition={{
+                        type: 'spring',
+                        stiffness: 400,
+                        damping: 30,
+                      }}
+                    />
+                  )}
+                  <span
+                    className={`relative z-10 font-bold text-sm transition-colors ${
+                      activeTitle === cat.title ? 'text-black' : 'text-white/60'
+                    }`}
+                  >
+                    {cat.title}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
         </motion.div>
 
         <motion.div

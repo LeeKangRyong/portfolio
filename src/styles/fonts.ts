@@ -11,15 +11,15 @@ export const fontWeight = {
 } as const;
 
 export const fontSize = {
-  xs: '0.75rem',     
-  sm: '0.875rem',    
-  base: '1rem',      
-  lg: '1.125rem',    
-  xl: '1.25rem',     
-  '2xl': '1.5rem',   
-  '3xl': '1.875rem', 
-  '4xl': '2.25rem',  
-  '5xl': '3rem',     
+  xs: '0.75rem',
+  sm: '0.875rem',
+  base: '1rem',
+  lg: '1.125rem',
+  xl: '1.25rem',
+  '2xl': '1.5rem',
+  '3xl': '1.875rem',
+  '4xl': '2.25rem',
+  '5xl': '3rem',
 } as const;
 
 export const lineHeight = {

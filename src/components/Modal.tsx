@@ -57,10 +57,22 @@ const Modal = ({
         <motion.div
           className="bg-white rounded-lg shadow-xl max-w-[60rem] w-[90%] max-h-[90vh] relative box-border overflow-y-auto overflow-x-hidden flex flex-col scrollbar-hide max-lg:rounded-md max-lg:max-w-[40rem] max-lg:max-h-[85vh] max-md:rounded max-md:max-w-[30rem] max-md:w-[95%] max-md:max-h-[85vh] max-sm:rounded-sm max-sm:max-w-[20rem] max-sm:w-[95%] max-sm:max-h-[80vh]"
           onClick={(e) => e.stopPropagation()}
-          initial={{ scale: 0.3, rotate: -15, y: 100, opacity: 0, originX: 0.5, originY: 0.5 }}
+          initial={{
+            scale: 0.3,
+            rotate: -15,
+            y: 100,
+            opacity: 0,
+            originX: 0.5,
+            originY: 0.5,
+          }}
           animate={{ scale: 1, rotate: 0, y: 0, opacity: 1 }}
           exit={{ scale: 0.3, rotate: 15, y: -100, opacity: 0 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 25, duration: 0.6 }}
+          transition={{
+            type: 'spring',
+            stiffness: 300,
+            damping: 25,
+            duration: 0.6,
+          }}
         >
           <motion.div
             className="h-[20vh] w-full flex flex-col justify-center items-center z-[200] rounded-t-lg py-4 max-lg:rounded-t-md max-md:rounded-t max-sm:rounded-t-sm"
@@ -127,7 +139,12 @@ const Modal = ({
                     {imgSrc && (
                       <button
                         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 text-white border-none rounded-lg py-2 px-4 text-sm font-semibold cursor-pointer"
-                        onClick={() => handleImageClick(imgSrc, `project result ${index + 1}`)}
+                        onClick={() =>
+                          handleImageClick(
+                            imgSrc,
+                            `project result ${index + 1}`,
+                          )
+                        }
                       >
                         확대
                       </button>
@@ -166,7 +183,10 @@ const Modal = ({
                 {projects[architecture] && (
                   <button
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 text-white border-none rounded-lg py-2 px-4 text-sm font-semibold cursor-pointer"
-                    onClick={() => { const src = projects[architecture]; if (src) handleImageClick(src, 'project architecture'); }}
+                    onClick={() => {
+                      const src = projects[architecture];
+                      if (src) handleImageClick(src, 'project architecture');
+                    }}
                   >
                     확대
                   </button>
@@ -203,7 +223,11 @@ const Modal = ({
           </motion.div>
         </motion.div>
         {zoomImage && (
-          <Zoom imageSrc={zoomImage.src} altText={zoomImage.alt} onClose={closeZoom} />
+          <Zoom
+            imageSrc={zoomImage.src}
+            altText={zoomImage.alt}
+            onClose={closeZoom}
+          />
         )}
       </motion.article>
     </AnimatePresence>

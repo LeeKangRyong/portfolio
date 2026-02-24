@@ -8,7 +8,8 @@ const Skeleton = ({ onComplete }: SkeletonProps) => {
   const [loadingProgress, setLoadingProgress] = useState<number>(0);
   const [showLoading, setShowLoading] = useState<boolean>(false);
 
-  const fullText = "'서비스 만들기 자체'를 \n좋아하는 프론트엔드 개발자\n 이강룡 입니다";
+  const fullText =
+    "'서비스 만들기 자체'를 \n좋아하는 프론트엔드 개발자\n 이강룡 입니다";
 
   useEffect(() => {
     if (currentStep === 0) {
@@ -81,15 +82,20 @@ const Skeleton = ({ onComplete }: SkeletonProps) => {
                 transition={{ delay: index * 0.3 }}
               >
                 {line}
-                {currentStep === 0 && index === typedText.split('\n').length - 1 && (
-                  <motion.span
-                    className="text-[#adff2f] font-normal ml-0.5 max-sm:ml-0"
-                    animate={{ opacity: [1, 0] }}
-                    transition={{ duration: 0.8, repeat: Infinity, repeatType: 'reverse' }}
-                  >
-                    |
-                  </motion.span>
-                )}
+                {currentStep === 0 &&
+                  index === typedText.split('\n').length - 1 && (
+                    <motion.span
+                      className="text-[#adff2f] font-normal ml-0.5 max-sm:ml-0"
+                      animate={{ opacity: [1, 0] }}
+                      transition={{
+                        duration: 0.8,
+                        repeat: Infinity,
+                        repeatType: 'reverse',
+                      }}
+                    >
+                      |
+                    </motion.span>
+                  )}
               </motion.div>
             ))}
           </motion.h1>

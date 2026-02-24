@@ -11,4 +11,9 @@ export type {
   HistoryProps,
   ProjectProps,
 } from './components';
-export type { AssetType, UseAssetsReturn, UseModalReturn, UseHoverReturn } from './hooks';
+export type {
+  AssetType,
+  UseAssetsReturn,
+  UseModalReturn,
+  UseHoverReturn,
+} from './hooks';

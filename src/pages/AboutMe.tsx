@@ -110,8 +110,17 @@ function AboutMe() {
             alt="증명사진"
             initial={{ scale: 0, rotate: -180 }}
             whileInView={{ scale: 1, rotate: 0 }}
-            transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.6 }}
-            whileHover={{ scale: 1.05, rotate: 5, transition: { duration: 0.3 } }}
+            transition={{
+              type: 'spring',
+              stiffness: 260,
+              damping: 20,
+              delay: 0.6,
+            }}
+            whileHover={{
+              scale: 1.05,
+              rotate: 5,
+              transition: { duration: 0.3 },
+            }}
             viewport={{ amount: 0.3 }}
           />
         </motion.div>

@@ -8,11 +8,20 @@ interface ImageSkeletonProps {
   onClick?: () => void;
 }
 
-const ImageSkeleton = ({ src, alt, className = '', objectFit = 'cover', onClick }: ImageSkeletonProps) => {
+const ImageSkeleton = ({
+  src,
+  alt,
+  className = '',
+  objectFit = 'cover',
+  onClick,
+}: ImageSkeletonProps) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className={`relative overflow-hidden ${className} ${src ? '' : ''}`} onClick={onClick}>
+    <div
+      className={`relative overflow-hidden ${className} ${src ? '' : ''}`}
+      onClick={onClick}
+    >
       {(!src || !loaded) && <div className="absolute inset-0 shimmer-bg" />}
       {src && (
         <img

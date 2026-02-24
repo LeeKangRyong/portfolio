@@ -24,7 +24,9 @@ function Skill({ icon, name }: SkillProps) {
         animate={{ rotate: 0 }}
         whileHover={{ rotate: [0, -12, 12, 0], transition: { duration: 0.5 } }}
       />
-      <p className={`whitespace-pre-line text-center text-white ${textSizeClass} font-semibold mt-2 leading-tight m-0`}>
+      <p
+        className={`whitespace-pre-line text-center text-white ${textSizeClass} font-semibold mt-2 leading-tight m-0`}
+      >
         {name}
       </p>
     </motion.article>
