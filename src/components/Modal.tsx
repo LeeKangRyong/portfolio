@@ -2,6 +2,7 @@ import { useState } from 'react';
 import useAssets from '@/hooks/useAssets';
 import FAQ from '@/components/FAQ';
 import Zoom from '@/components/Zoom';
+import ImageSkeleton from '@/components/ImageSkeleton';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { ModalProps } from '@/types';
 
@@ -12,15 +13,21 @@ interface ZoomImage {
 
 const Modal = ({
   onClose,
+  type,
   title,
   duration,
-  resultImg,
-  arcImg,
-  faqData,
-  topcolor,
+  summary,
+  architecture,
+  faq,
+  headerColor,
 }: ModalProps) => {
   const { assets: projects } = useAssets('projects');
   const [zoomImage, setZoomImage] = useState<ZoomImage | null>(null);
+
+  const gridClass =
+    type === 'app'
+      ? 'grid grid-cols-4 gap-4 mb-8 max-lg:gap-3.5 max-lg:mb-7 max-md:grid-cols-2 max-md:gap-3 max-md:mb-6 max-sm:gap-2.5 max-sm:mb-4'
+      : 'grid grid-cols-2 gap-4 mb-8 max-lg:gap-3.5 max-lg:mb-7 max-md:grid-cols-1 max-md:gap-3 max-md:mb-6 max-sm:gap-2.5 max-sm:mb-4';
 
   const handleImageClick = (imageSrc: string, altText: string) => {
     setZoomImage({ src: imageSrc, alt: altText });
@@ -50,7 +57,7 @@ const Modal = ({
         >
           <motion.div
             className="h-[20vh] w-full flex flex-col justify-center items-center z-[200] rounded-t-lg py-4 max-lg:rounded-t-md max-md:rounded-t max-sm:rounded-t-sm"
-            style={{ backgroundColor: topcolor }}
+            style={{ backgroundColor: headerColor }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -89,30 +96,36 @@ const Modal = ({
             </motion.h3>
 
             <motion.div
-              className="grid grid-cols-2 gap-4 mb-8 max-lg:gap-3.5 max-lg:mb-7 max-md:grid-cols-1 max-md:gap-3 max-md:mb-6 max-sm:gap-2.5 max-sm:mb-4"
+              className={gridClass}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
             >
-              {resultImg.map((imgKey, index) => {
+              {summary.map((imgKey, index) => {
                 const imgSrc = projects[imgKey];
-                if (!imgSrc) return null;
                 return (
-                  <motion.img
+                  <motion.div
                     key={imgKey}
-                    src={imgSrc}
-                    alt={`project result ${index + 1}`}
-                    className="w-full h-auto rounded-lg shadow-md cursor-pointer"
+                    className="relative rounded-lg overflow-hidden cursor-pointer border-0 border-transparent group"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: '0 8px 25px rgba(0, 0, 0, 0.2)',
-                      transition: { duration: 0.3 },
-                    }}
-                    onClick={() => handleImageClick(imgSrc, `project result ${index + 1}`)}
-                  />
+                  >
+                    <ImageSkeleton
+                      src={imgSrc}
+                      alt={`project result ${index + 1}`}
+                      className={`${type === 'app' ? 'aspect-[9/16] w-full' : 'aspect-video w-full'} transition-opacity duration-300 group-hover:opacity-90`}
+                      objectFit="contain"
+                    />
+                    {imgSrc && (
+                      <button
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 text-white border-none rounded-lg py-2 px-4 text-sm font-semibold cursor-pointer"
+                        onClick={() => handleImageClick(imgSrc, `project result ${index + 1}`)}
+                      >
+                        확대
+                      </button>
+                    )}
+                  </motion.div>
                 );
               })}
             </motion.div>
@@ -132,22 +145,26 @@ const Modal = ({
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.9, duration: 0.5 }}
             >
-              {arcImg && projects[arcImg] && (
-                <motion.img
-                  src={projects[arcImg]}
+              <motion.div
+                className="relative inline-block rounded-lg overflow-hidden cursor-pointer max-w-[600px] w-full group"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 1, duration: 0.4 }}
+              >
+                <ImageSkeleton
+                  src={projects[architecture]}
                   alt="project architecture"
-                  className="w-full max-w-[600px] h-auto rounded-lg shadow-md cursor-pointer"
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 1, duration: 0.4 }}
-                  whileHover={{
-                    scale: 1.02,
-                    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.2)',
-                    transition: { duration: 0.3 },
-                  }}
-                  onClick={() => handleImageClick(projects[arcImg]!, 'project architecture')}
+                  className="aspect-video w-full transition-opacity duration-300 group-hover:opacity-90"
                 />
-              )}
+                {projects[architecture] && (
+                  <button
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 text-white border-none rounded-lg py-2 px-4 text-sm font-semibold cursor-pointer"
+                    onClick={() => { const src = projects[architecture]; if (src) handleImageClick(src, 'project architecture'); }}
+                  >
+                    확대
+                  </button>
+                )}
+              </motion.div>
             </motion.div>
 
             <motion.h3
@@ -165,14 +182,14 @@ const Modal = ({
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.5 }}
             >
-              {faqData.map((faq, index) => (
+              {faq.map((item, index) => (
                 <motion.div
-                  key={faq.question}
+                  key={item.question}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 1.3 + index * 0.1, duration: 0.4 }}
                 >
-                  <FAQ question={faq.question} answer={faq.answer} />
+                  <FAQ question={item.question} answer={item.answer} />
                 </motion.div>
               ))}
             </motion.div>

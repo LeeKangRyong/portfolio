@@ -1,14 +1,15 @@
-import type { FAQ } from './project';
+import type { FaqItem, StackItem } from './project';
 import type { SkillItem } from './skill';
 
 export interface ModalProps {
   onClose: () => void;
+  type: 'web' | 'app';
   title: string;
   duration: string;
-  resultImg: string[];
-  arcImg: string;
-  faqData: FAQ[];
-  topcolor: string;
+  summary: string[];
+  architecture: string;
+  faq: FaqItem[];
+  headerColor: string;
 }
 
 export interface ZoomProps {
@@ -22,10 +23,11 @@ export interface SkeletonProps {
 }
 
 export interface StackProps {
-  stack: string;
+  name: string;
+  icon: string;
 }
 
-export interface FAQProps {
+export interface FaqItemProps {
   question: string;
   answer: string;
 }
@@ -39,16 +41,18 @@ export interface HistoryProps {
 }
 
 export interface ProjectProps {
+  type: 'web' | 'app';
   titleImg: string;
   title: string;
   description: string;
   member: string;
   role: string;
   duration: string;
-  stacks: string[];
-  githubLink: string;
-  resultImg: string[];
-  arcImg: string;
-  faqData: FAQ[];
-  topcolor: string;
+  stack: StackItem[];
+  github: string;
+  demo?: string;
+  summary: string[];
+  architecture: string;
+  faq: FaqItem[];
+  headerColor: string;
 }

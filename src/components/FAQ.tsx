@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import arrowIcon from '@/assets/toggle.png';
-import type { FAQProps } from '@/types';
+import type { FaqItemProps } from '@/types';
 
-const FAQ = ({ question, answer }: FAQProps) => {
+const FAQ = ({ question, answer }: FaqItemProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleFAQ = () => {

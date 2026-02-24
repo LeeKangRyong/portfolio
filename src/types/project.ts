@@ -1,20 +1,27 @@
-export interface FAQ {
+export interface FaqItem {
   question: string;
   answer: string;
 }
 
+export interface StackItem {
+  name: string;
+  icon: string;
+}
+
 export interface Project {
   id: number;
+  type: 'web' | 'app';
   titleImg: string;
   title: string;
   description: string;
   member: string;
   role: string;
   duration: string;
-  stacks: string[];
-  githubLink: string;
-  resultImg: string[];
-  arcImg: string;
-  topcolor: string;
-  faqData: FAQ[];
+  stack: StackItem[];
+  github: string;
+  demo?: string;
+  summary: string[];
+  architecture: string;
+  headerColor: string;
+  faq: FaqItem[];
 }

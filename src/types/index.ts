@@ -1,4 +1,4 @@
-export type { FAQ, Project } from './project';
+export type { FaqItem, Project, StackItem } from './project';
 export type { SkillItem, SkillCategory } from './skill';
 export type { History } from './history';
 export type {
@@ -6,7 +6,7 @@ export type {
   ZoomProps,
   SkeletonProps,
   StackProps,
-  FAQProps,
+  FaqItemProps,
   SkillProps,
   HistoryProps,
   ProjectProps,

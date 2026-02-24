@@ -20,8 +20,7 @@ const Projects = () => {
 
       <div className="flex flex-col gap-12">
         {projects.map((project) => {
-          const titleImg = projectImages[project.titleImg];
-          if (!titleImg) return null;
+          const titleImg = projectImages[project.titleImg] ?? '';
           return (
             <motion.div
               key={project.id}
@@ -31,18 +30,20 @@ const Projects = () => {
               viewport={{ amount: 0.2 }}
             >
               <ProjectDetail
+                type={project.type}
                 titleImg={titleImg}
                 title={project.title}
                 description={project.description}
                 member={project.member}
                 role={project.role}
                 duration={project.duration}
-                stacks={project.stacks}
-                githubLink={project.githubLink}
-                resultImg={project.resultImg}
-                arcImg={project.arcImg}
-                faqData={project.faqData}
-                topcolor={project.topcolor}
+                stack={project.stack}
+                github={project.github}
+                {...(project.demo ? { demo: project.demo } : {})}
+                summary={project.summary}
+                architecture={project.architecture}
+                faq={project.faq}
+                headerColor={project.headerColor}
               />
             </motion.div>
           );

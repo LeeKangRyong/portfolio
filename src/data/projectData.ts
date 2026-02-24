@@ -21,7 +21,7 @@ const projects: Project[] = [
     github: 'https://github.com/zzan-app/zzan-fe-app',
     type: 'app',
     summary: ['zzan_zzan_map', 'zzan_zzan_chat', 'zzan_zzan_feed', 'zzan_zzan_alcohol'],
-    architecture: 'zzan_architecture',
+    architecture: 'zzan_zzan_architecture',
     headerColor: '#FFD800',
     faq: [
       {
@@ -58,7 +58,7 @@ const projects: Project[] = [
     github: 'https://github.com/LeeKangRyong/teamworks-fe',
     type: 'web',
     summary: ['teamworks_teamworks_dashboard', 'teamworks_teamworks_list', 'teamworks_teamworks_participation', 'teamworks_teamworks_chat'],
-    architecture: 'teamworks_architecture',
+    architecture: 'teamworks_teamworks_architecture',
     headerColor: '#C3D6FE',
     faq: [
       {
@@ -103,7 +103,7 @@ const projects: Project[] = [
     github: 'https://github.com/LeeKangRyong/portfolio',
     type: 'web',
     summary: ['portfolio_portfolio_skeleton', 'portfolio_portoflio_history', 'portfolio_portfolio_projects', 'portfolio_portofolio_modal'],
-    architecture: 'portfolio_architecture',
+    architecture: 'portfolio_portfolio_architecture',
     headerColor: '#252c26',
     faq: [
       {
@@ -146,7 +146,7 @@ const projects: Project[] = [
     github: 'https://github.com/prome-individual',
     type: 'app',
     summary: ['kong_kong_login', 'kong_kong_main', 'kong_kong_chat', 'kong_kong_diagnose'],
-    architecture: 'kongkong_architecture',
+    architecture: 'kong_kong_architecture',
     headerColor: '#DC2626',
     faq: [
       {
@@ -178,7 +178,7 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    titleImg: 'encapmoments_encapmomnets_intro',
+    titleImg: 'encapmoments_encapmoments_intro',
     title: 'EncapMoments',
     description: 'AI 미션 기반 추억을 만들고 저장하는 가족 공유 앱',
     member: 'FE/Design/PM (1), BE (2)',
@@ -195,7 +195,7 @@ const projects: Project[] = [
     github: 'https://github.com/LeeKangRyong/encapmoments-fe',
     type: 'app',
     summary: ['encapmoments_encapmoments_main', 'encapmoments_encapmoments_mission', 'encapmoments_encapmoments_album', 'encapmoments_encapmoments_profile'],
-    architecture: 'encapmoments_architecture',
+    architecture: 'encapmoments_encapmoments_architecture',
     headerColor: '#AAAB52',
     faq: [
       {
