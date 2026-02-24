@@ -13,7 +13,7 @@ const ImageSkeleton = ({ src, alt, className = '', objectFit = 'cover', onClick 
 
   return (
     <div className={`relative overflow-hidden ${className} ${src ? '' : ''}`} onClick={onClick}>
-      {!src && <div className="absolute inset-0 shimmer-bg" />}
+      {(!src || !loaded) && <div className="absolute inset-0 shimmer-bg" />}
       {src && (
         <img
           src={src}

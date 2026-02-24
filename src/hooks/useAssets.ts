@@ -16,7 +16,7 @@ const useAssets = (assetType: AssetType): UseAssetsReturn => {
         eager: true,
       }) as Record<string, GlobModule>;
     } else if (assetType === 'projects') {
-      assetModules = import.meta.glob('/src/assets/projects/**/*.png', {
+      assetModules = import.meta.glob('/src/assets/projects/**/*.webp', {
         eager: true,
       }) as Record<string, GlobModule>;
     }
@@ -30,7 +30,7 @@ const useAssets = (assetType: AssetType): UseAssetsReturn => {
       } else if (assetType === 'projects') {
         const pathParts = path.split('/');
         const folderName = pathParts[pathParts.length - 2];
-        const fileName = pathParts[pathParts.length - 1]?.replace(/\.(png|jpg|jpeg|gif|svg)$/, '');
+        const fileName = pathParts[pathParts.length - 1]?.replace(/\.(png|jpg|jpeg|gif|svg|webp)$/, '');
         if (folderName && fileName) {
           const key = `${folderName}_${fileName}`;
           loadedAssets[key] = module.default;
