@@ -1,11 +1,11 @@
 import { Link } from 'react-scroll';
 import { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const TopBar = () => {
   const [showNavBar, setShowNavbar] = useState<boolean>(true);
   const hideNavBarTimeoutRef = useRef<number | null>(null);
-  const { scrollY }: { scrollY: MotionValue<number> } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
 
   const backgroundColor = useTransform(
     scrollY,
@@ -42,11 +42,7 @@ const TopBar = () => {
     <>
       <motion.div
         style={{
-          scaleX: useTransform(
-            scrollY,
-            [0, document.documentElement.scrollHeight - window.innerHeight],
-            [0, 1]
-          ),
+          scaleX: scrollYProgress,
           position: 'fixed',
           top: 0,
           left: 0,
