@@ -92,7 +92,7 @@ const Project = ({
           <p className="text-lg font-bold text-white m-0 mb-3 max-lg:text-base max-md:text-sm max-sm:text-sm max-sm:mb-2">
             Stack
           </p>
-          <div className="grid grid-cols-4 gap-2.5 w-full p-0 box-border max-md:grid-cols-4 max-sm:grid-cols-3 max-sm:gap-1.5">
+          <div className="flex flex-wrap gap-2 w-full p-0 box-border">
             {stack.map((item) => (
               <Stack
                 key={item.name}
