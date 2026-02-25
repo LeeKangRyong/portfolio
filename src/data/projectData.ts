@@ -18,7 +18,7 @@ const projects: Project[] = [
       { name: 'Tanstack Query', icon: 'tanstack_query' },
       { name: 'Claude Code', icon: 'claude_code' },
     ],
-    github: 'https://github.com/zzan-app/zzan-fe-app',
+    github: 'https://github.com/zzan-app',
     type: 'app',
     summary: [
       'zzan_zzan_map',
@@ -221,7 +221,6 @@ const projects: Project[] = [
       { name: 'Styled Components', icon: 'styled_components' },
       { name: 'Zustand', icon: 'zustand' },
       { name: 'Figma', icon: 'figma' },
-      { name: 'Notion', icon: 'notion' },
     ],
     github: 'https://github.com/LeeKangRyong/encapmoments-fe',
     type: 'app',
