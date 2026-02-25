@@ -123,9 +123,9 @@ const projects: Project[] = [
     type: 'web',
     summary: [
       'portfolio_portfolio_skeleton',
-      'portfolio_portoflio_history',
+      'portfolio_portfolio_history',
       'portfolio_portfolio_projects',
-      'portfolio_portofolio_modal',
+      'portfolio_portfolio_modal',
     ],
     architecture: 'portfolio_portfolio_architecture',
     headerColor: '#252c26',

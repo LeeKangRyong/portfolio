@@ -179,6 +179,7 @@ const Modal = ({
                   src={projects[architecture]}
                   alt="project architecture"
                   className="aspect-video w-full transition-opacity duration-300 group-hover:opacity-90"
+                  objectFit="contain"
                 />
                 {projects[architecture] && (
                   <button

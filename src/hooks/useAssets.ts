@@ -15,35 +15,42 @@ const useAssets = (assetType: AssetType): UseAssetsReturn => {
       assetModules = import.meta.glob('/src/assets/skills/*.svg', {
         eager: true,
       }) as Record<string, GlobModule>;
-    } else if (assetType === 'projects') {
-      assetModules = import.meta.glob('/src/assets/projects/**/*.webp', {
-        eager: true,
-      }) as Record<string, GlobModule>;
     }
 
     const loadedAssets: Record<string, string> = {};
 
-    Object.entries(assetModules).forEach(([path, module]) => {
-      if (assetType === 'skills') {
+    if (assetType === 'projects') {
+      const pngModules = import.meta.glob('/src/assets/projects/**/*.png', {
+        eager: true,
+      }) as Record<string, GlobModule>;
+      const webpModules = import.meta.glob('/src/assets/projects/**/*.webp', {
+        eager: true,
+      }) as Record<string, GlobModule>;
+
+      [pngModules, webpModules].forEach((modules) => {
+        Object.entries(modules).forEach(([path, module]) => {
+          const pathParts = path.split('/');
+          const folderName = pathParts[pathParts.length - 2];
+          const fileName = pathParts[pathParts.length - 1]?.replace(
+            /\.(png|jpg|jpeg|gif|svg|webp)$/,
+            '',
+          );
+          if (folderName && fileName) {
+            loadedAssets[`${folderName}_${fileName}`] = module.default;
+          }
+        });
+      });
+    } else {
+      Object.entries(assetModules).forEach(([path, module]) => {
         const fileName =
           path
             .split('/')
             .pop()
             ?.replace(/\.(png|jpg|jpeg|gif|svg)$/, '') ?? '';
         loadedAssets[fileName] = module.default;
-      } else if (assetType === 'projects') {
-        const pathParts = path.split('/');
-        const folderName = pathParts[pathParts.length - 2];
-        const fileName = pathParts[pathParts.length - 1]?.replace(
-          /\.(png|jpg|jpeg|gif|svg|webp)$/,
-          '',
-        );
-        if (folderName && fileName) {
-          const key = `${folderName}_${fileName}`;
-          loadedAssets[key] = module.default;
-        }
-      }
-    });
+      });
+    }
+
     setAssets(loadedAssets);
   }, [assetType]);
 
